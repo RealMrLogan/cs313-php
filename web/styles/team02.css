@@ -2,3 +2,7 @@
     font-size: 1.5em;
     background-color: aliceblue;
 }
+
+.text-div:hover {
+    font-weight: bold;
+}
