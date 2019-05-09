@@ -17,7 +17,10 @@
    <hr>
    <main>
       <h1>School Assignments</h1>
-      <p>coming soon...</p>
+      <section class="assignments">
+         <a href="team02/team02.html">Team 02</a>
+         <a href="team03/index.php">Team 03</a>
+      </section>
    </main>
    <footer>
       <p>&copy; Logan Saunders, <span id="date"></span></p>

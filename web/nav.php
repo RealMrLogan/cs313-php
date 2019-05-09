@@ -1,6 +1,7 @@
 <?php
     echo "<nav>
-    <a href='index.php' title='Intro'>Introduction</a>
-    <a href='assignments.php' title='Assignments'>Assignments</a>
- </nav>"
+    <a href='/web/index.php' title='Intro'>Introduction</a>
+    <a href='/web/assignments.php' title='Assignments'>Assignments</a>
+ </nav>
+ <hr />"
 ?>

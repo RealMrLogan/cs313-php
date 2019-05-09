@@ -73,7 +73,7 @@ hr {
 
 main {
    width: 60%;
-   margin: auto;
+   margin: 50px auto;
 }
 main p {
    padding: 5px 0;
@@ -88,6 +88,11 @@ a {
 a:hover {
    position: relative;
    color: #0F8B8D;
+}
+
+section.assignments {
+   display: flex;
+   flex-direction: column;
 }
 
 footer {

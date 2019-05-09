@@ -18,7 +18,7 @@
    <main>
       <h1>My name is Logan Saunders</h1>
       <div>
-         <img src="images/profile-picture.jpg" alt="Profile Picture" class="text-picture">
+         <img src="profile-picture.jpg" alt="Profile Picture" class="text-picture">
          <p>
             If you haven't guessed it by now, my name is Logan. I am interested in a few different things like hiking, spending time with my family and I also enjoy pop culture (video games and movies).<br /> <br />
             
