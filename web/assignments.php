@@ -20,6 +20,7 @@
       <section class="assignments">
          <a href="team02/team02.html">Team 02</a>
          <a href="team03/index.php">Team 03</a>
+         <a href="prove03/browse.php">Prove 03 - Shopping Cart</a>
       </section>
    </main>
    <footer>

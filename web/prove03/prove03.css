@@ -1,0 +1,59 @@
+.browse-items {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.browse-items section {
+   display: flex;
+}
+
+.item {
+   margin: 5px;
+   width: 50%;
+   border: 2px solid black;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.item img {
+   width: 100%;
+   padding-bottom: 5px;
+}
+
+.item >div:last-child {
+   display: flex;
+   flex-direction: column;
+}
+.item button {
+   width: 50%;
+   margin: auto;
+   cursor: pointer;
+}
+
+.added {
+   background-color: grey;
+   width: 100% !important;
+   border: none;
+   padding: 5px 0 5px 5%;
+}
+
+.hide {
+   display: none;
+}
+
+.cart-trail {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
+legend {
+   font-size: 2em;
+   font-weight: bolder;
+}
+
+fieldset {
+   display: flex;
+}

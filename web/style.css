@@ -16,7 +16,7 @@ body {
    background-color: #DAD2D8;
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, legend, label, button {
    color: #143642;
    font-family: 'Nanum Myeongjo', serif;
 }
@@ -84,6 +84,7 @@ a {
    color: #A8201A;
    text-decoration: none;
    transition: all .2s ease-in-out;
+   cursor: pointer;
 }
 a:hover {
    position: relative;
