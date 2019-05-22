@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Scriptures</title>
+   <title>Scriptures</title>
 </head>
+
 <body>
-<?php
+   <?php
 
  // Get the database connection file
  require_once 'connections.php';
@@ -21,12 +23,12 @@ foreach ($db->query('SELECT * FROM Scriptures') as $row)
 
 ?>
 
-<form method="post" action="team_activity5.php">
-<label for="name">Search for book:</label>
-<input type="text" id="name" name="name"><br>
-</form>
+   <form method="post" action="search.php">
+      <label for="name">Search for book:</label>
+      <input type="text" id="name" name="name"><br>
+   </form>
 
-<?php
+   <?php
 var_dump($_POST);
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 echo "<br>";
@@ -61,4 +63,5 @@ foreach ($rows as $row2)
 ?>
 
 </body>
+
 </html>
