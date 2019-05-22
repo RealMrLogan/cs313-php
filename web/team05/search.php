@@ -1,4 +1,7 @@
 <?php
+   // Get the database connection file
+   require_once 'connections.php';
+
    var_dump($_POST);
    $name = $_POST["name"];
    echo "Name: " . $name;
