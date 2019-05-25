@@ -6,12 +6,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="../styles.css">
-   <title>Character List | Game</title>
+   <title>Item List | Game</title>
 </head>
 
 <body>
    <header>
-      <h1>Character List</h1>
+      <h1>Item List</h1>
    </header>
    <hr>
    <main>

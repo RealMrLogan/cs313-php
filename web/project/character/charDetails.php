@@ -19,12 +19,6 @@
             require_once '../connections.php';
             $person = $_GET["person"];
             echo "Person: " . $person . "<br>";
-            // $statement = $db->prepare("SELECT * FROM character WHERE person='$person'");
-            // $statement.execute();
-            // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            //    echo "Got something!";
-            //    echo $row['person'] . " " . $row['weaponname'];
-            // }
 
             $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
@@ -36,6 +30,18 @@
                {
                   echo "Got the person!";
                   print_r($rows);
+                  ?>
+                  <label for="person">Person: <?php $row['person'] ?></label>
+                  <label for="hitpoints">Hit Points: <?php $row['hitpoints'] ?></label>
+                  <label for="damage">Damage: <?php $row['damage'] ?></label>
+                  <label for="armor">Armor: <?php $row['armor'] ?></label>
+                  <label for="magic">Magic: <?php $row['magic'] ?></label>
+                  <label for="weaponname">Weapon: <?php $row['weaponname'] ?></label>
+                  <label for="protectionname">Protection: <?php $row['protectionname'] ?></label>
+                  <label for="spellname">Spell: <?php $row['spellname'] ?></label>
+                  <label for="buffname"> Buff: <?php $row['buffname'] ?></label>
+                  <label for="isdead">Am I Dead?<?php $row['isdead'] ?></label>
+                  <?php
                }
             }
          ?>
