@@ -18,7 +18,7 @@
             // Get the database connection file
             require_once 'connections.php';
             $person = $_GET["person"];
-            echo "Person: " . $person;
+            echo "Person: " . $person . "<br>";
             echo "First attempt<br>";
             // foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
             //    printf($row);
