@@ -25,7 +25,7 @@
             {
                ?>
                <form action="itemDetails.php" method="get">
-                  <input type="submit" name="weapon" value="<?php echo $row['weaponname']; ?>">
+                  <input type="submit" name="weapon" value="<?php echo $row['displayname']; ?>">
                </form>
             <?php
             }
@@ -40,7 +40,7 @@
             {
                ?>
                <form action="itemDetails.php" method="get">
-                  <input type="submit" name="protection" value="<?php echo $row['protectionname']; ?>">
+                  <input type="submit" name="protection" value="<?php echo $row['displayname']; ?>">
                </form>
             <?php
             }
@@ -55,7 +55,7 @@
             {
                ?>
                <form action="itemDetails.php" method="get">
-                  <input type="submit" name="spell" value="<?php echo $row['spellname']; ?>">
+                  <input type="submit" name="spell" value="<?php echo $row['displayname']; ?>">
                </form>
             <?php
             }

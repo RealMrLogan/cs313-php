@@ -20,13 +20,13 @@
             $stmnt = 0;
             if (isset($_GET["weapon"])) {
                $query = $_GET["weapon"];
-               $stmnt = $db->prepare('SELECT * FROM weapon WHERE weaponname=:query');
+               $stmnt = $db->prepare('SELECT * FROM weapon WHERE displayname=:query');
             } else if (isset($_GET["protection"])) {
                $query = $_GET["protection"];
-               $stmnt = $db->prepare('SELECT * FROM protection WHERE protectionname=:query');
+               $stmnt = $db->prepare('SELECT * FROM protection WHERE displayname=:query');
             } else if (isset($_GET["spell"])) {
                $query = $_GET["spell"];
-               $stmnt = $db->prepare('SELECT * FROM spell WHERE spellname=:query');
+               $stmnt = $db->prepare('SELECT * FROM spell WHERE displayname=:query');
             }
             $stmnt->bindValue(':query', $query, PDO::PARAM_STR);
             $stmnt->execute();
@@ -37,20 +37,20 @@
                {
                   if ($row['weaponname']) {
                      ?>
-                     <label>Weapon: <?php echo $row['weaponname']; ?></label> <br>
+                     <label>Weapon: <?php echo $row['displayname']; ?></label> <br>
                      <label>Damage: <?php echo $row['damage']; ?></label> <br>
                      <label>Range: <?php echo $row['range']; ?></label> <br>
                      <label>Durability: <?php echo $row['durability']; ?></label>
                      <?php
                   } else if ($row['protectionname']) {
                      ?>
-                     <label>Protection: <?php echo $row['protectionname']; ?></label> <br>
+                     <label>Protection: <?php echo $row['displayname']; ?></label> <br>
                      <label>Armor: <?php echo $row['armor']; ?></label> <br>
                      <label>Durability: <?php echo $row['durability']; ?></label>
                      <?php
                   } else if ($row['spellname']) {
                      ?>
-                     <label>Spell: <?php echo $row['spellname']; ?></label> <br>
+                     <label>Spell: <?php echo $row['displayname']; ?></label> <br>
                      <label>Damage: <?php echo $row['damage']; ?></label> <br>
                      <label>Range: <?php echo $row['range']; ?></label> <br>
                      <label>Cost: <?php echo $row['cost']; ?></label> <br>
