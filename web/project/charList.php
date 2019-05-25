@@ -30,7 +30,7 @@
                <input type="submit" value="<?php echo $row['person']; ?>">
             </form> -->
             <?php
-            echo "<form action='charDetails.php' method='POST'><input type='submit' name='person' value='".$row['person']."'></form>";
+            echo "<form action='charDetails.php' method='GET'><input type='submit' name='person' value='".$row['person']."'></form>";
          }
          ?>
       </section>
