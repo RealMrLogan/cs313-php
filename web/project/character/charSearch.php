@@ -24,7 +24,6 @@
          // Get the database connection file
          require_once '../connections.php';
          $query = filter_input(INPUT_POST, 'search-query', FILTER_SANITIZE_STRING);
-         echo $query . "<br>";
 
          $stmt = $db->prepare('SELECT * FROM character WHERE displayname=:displayname');
          $stmt->bindValue(':displayname', $query, PDO::PARAM_STR);
@@ -34,13 +33,17 @@
          if (isset($rows)) {
             ?>
             <h2><?php echo count($rows); ?> Result(s)</h2>
+            <ul>
             <?php
             foreach ($rows as $row)
             {
                ?>
-               <label for=""><?php echo $row['displayname']; ?></label>
+               <li><?php echo $row['displayname']; ?></li>
                <?php
             }
+            ?>
+            </ul>
+            <?php
          } else {
             ?>
             <h2>No Results...</h2>
