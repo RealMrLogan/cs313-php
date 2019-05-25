@@ -23,6 +23,7 @@
             // foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
             //    printf($row);
             // }
+            
             echo "Second attempt<br>";
             $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
