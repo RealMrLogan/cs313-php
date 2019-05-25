@@ -22,7 +22,8 @@
          require_once 'connections.php';
          foreach ($db->query('SELECT * FROM character') as $row)
          {
-            echo "<a href='charDetails.php&person=" . $row['person'] .">" . $row['person'] . "</a>";
+            echo $row;
+            echo "<a href='charDetails.php&person=" . $row['person'] ."'>" . $row['person'] . "</a>";
          }
          ?>
       </section>
