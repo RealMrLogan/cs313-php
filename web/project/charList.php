@@ -19,14 +19,16 @@
          <form action="charDetails.php" method="get">
             <input type="submit" name="person" value="test">
          </form>
-         
+
          <?php
          // Get the database connection file
          require_once 'connections.php';
          foreach ($db->query('SELECT * FROM character') as $row)
          {
             echo $row;
-            echo "<a href='charDetails.php&person=" . $row['person'] ."'>" . $row['person'] . "</a>";
+            echo "<form action='charDetails.php' method='get'>
+                     <input type='submit' name='person' value='".$row['person']."'></form>"
+            // echo "<a href='charDetails.php&person=" . $row['person'] ."'>" . $row['person'] . "</a>";
          }
          ?>
       </section>
