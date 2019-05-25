@@ -16,7 +16,10 @@
    <hr>
    <main>
       <section class="options">
-         <a href='charDetails.php?person=test'>Test</a>
+         <form action="charDetails.php" method="get">
+            <input type="submit" name="person" value="test">
+         </form>
+         
          <?php
          // Get the database connection file
          require_once 'connections.php';

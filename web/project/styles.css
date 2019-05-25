@@ -18,7 +18,7 @@ main {
    justify-content: space-between;
 }
 
-.options a, main h2 {
+.options a, form input[type="submit"] {
    padding: 10px;
    background-color: black;
    color: white;
@@ -31,7 +31,7 @@ main {
    text-decoration: none;
 }
 
-.options a:hover, main h2:hover {
+.options a:hover, form input[type="submit"]:hover {
    background-color: lightgrey;
    color: black;
    border: 1px solid black;
