@@ -9,7 +9,7 @@
 </head>
 <body>   
    <header>
-      <h1>character Details</h1>
+      <h1>Character Details</h1>
    </header>
    <hr>
    <main>
@@ -28,8 +28,8 @@
             if (isset($rows)) {
                foreach ($rows as $row)
                {
-                  echo "Got the person!";
-                  print_r($row);
+                  // echo "Got the person!";
+                  // print_r($row);
                   ?>
                   <br> <br>
                   <label for="person">Person: <?php echo $row['person']; ?></label> <br>

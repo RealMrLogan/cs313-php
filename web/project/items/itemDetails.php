@@ -23,10 +23,10 @@
                $stmnt = $db->prepare('SELECT * FROM weapon WHERE weaponname=:query');
             } else if (isset($_GET["protection"])) {
                $query = $_GET["protection"];
-               $stmnt = $db->prepare('SELECT * FROM weapon WHERE protectionname=:query');
+               $stmnt = $db->prepare('SELECT * FROM protection WHERE protectionname=:query');
             } else if (isset($_GET["spell"])) {
                $query = $_GET["spell"];
-               $stmnt = $db->prepare('SELECT * FROM weapon WHERE spellname=:query');
+               $stmnt = $db->prepare('SELECT * FROM spell WHERE spellname=:query');
             }
             echo "Query: " . $query . "<br>";
             // $statement = $db->prepare("SELECT * FROM character WHERE person='$person'");
@@ -37,9 +37,9 @@
             // }
 
             // $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
-            $stmt->bindValue(':query', $query, PDO::PARAM_STR);
-            $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmnt->bindValue(':query', $query, PDO::PARAM_STR);
+            $stmnt->execute();
+            $rows = $stmnt->fetchAll(PDO::FETCH_ASSOC);
 
             if (isset($rows)) {
                foreach ($rows as $row)
