@@ -30,7 +30,9 @@
                {
                   echo "Got the person!";
                   print_r($rows);
+                  print_r($row);
                   ?>
+                  <br>
                   <label for="person">Person: <?php $row['person'] ?></label>
                   <label for="hitpoints">Hit Points: <?php $row['hitpoints'] ?></label>
                   <label for="damage">Damage: <?php $row['damage'] ?></label>
