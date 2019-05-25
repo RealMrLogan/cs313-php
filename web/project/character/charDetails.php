@@ -29,20 +29,19 @@
                foreach ($rows as $row)
                {
                   echo "Got the person!";
-                  print_r($rows);
                   print_r($row);
                   ?>
-                  <br>
-                  <label for="person">Person: <?php $row['person'] ?></label>
-                  <label for="hitpoints">Hit Points: <?php $row['hitpoints'] ?></label>
-                  <label for="damage">Damage: <?php $row['damage'] ?></label>
-                  <label for="armor">Armor: <?php $row['armor'] ?></label>
-                  <label for="magic">Magic: <?php $row['magic'] ?></label>
-                  <label for="weaponname">Weapon: <?php $row['weaponname'] ?></label>
-                  <label for="protectionname">Protection: <?php $row['protectionname'] ?></label>
-                  <label for="spellname">Spell: <?php $row['spellname'] ?></label>
-                  <label for="buffname"> Buff: <?php $row['buffname'] ?></label>
-                  <label for="isdead">Am I Dead?<?php $row['isdead'] ?></label>
+                  <br> <br>
+                  <label for="person">Person: <?php echo $row['person']; ?></label> <br>
+                  <label for="hitpoints">Hit Points: <?php echo $row['hitpoints']; ?></label> <br>
+                  <label for="damage">Damage: <?php echo $row['damage']; ?></label> <br>
+                  <label for="armor">Armor: <?php echo $row['armor']; ?></label> <br>
+                  <label for="magic">Magic: <?php echo $row['magic']; ?></label> <br>
+                  <label for="weaponname">Weapon: <?php echo $row['weaponname']; ?></label> <br>
+                  <label for="protectionname">Protection: <?php echo $row['protectionname']; ?></label> <br>
+                  <label for="spellname">Spell: <?php echo $row['spellname']; ?></label> <br>
+                  <label for="buffname"> Buff: <?php echo $row['buffname']; ?></label> <br>
+                  <label for="isdead">Am I Dead?<?php echo $row['isdead']; ?></label>
                   <?php
                }
             }
