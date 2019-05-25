@@ -23,7 +23,7 @@
             </form>
             <?php
             // Get the database connection file
-            require_once 'connections.php';
+            require_once '../connections.php';
             foreach ($db->query('SELECT * FROM weapon') as $row)
             {
                ?>
@@ -53,7 +53,7 @@
             <legend>Spells</legend>
             <?php
             // Get the database connection file
-            require_once 'connections.php';
+            require_once '../connections.php';
             foreach ($db->query('SELECT * FROM spell') as $row)
             {
                ?>

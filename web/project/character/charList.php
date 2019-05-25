@@ -28,7 +28,7 @@
          {
             ?>
             <form action="charDetails.php" method="get">
-               <input type="submit" value="<?php echo $row['person']; ?>">
+               <input type="submit" name="person" value="<?php echo $row['person']; ?>">
             </form>
             <?php
             // echo "<form action='charDetails.php' method='GET'><input type='submit' name='person' value='".$row['person']."'></form>";
