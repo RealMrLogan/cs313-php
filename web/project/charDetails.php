@@ -20,9 +20,9 @@
             $person = $_POST["person"];
             echo "Person: " . $person;
             echo "First attempt";
-            foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
-               printf($row);
-            }
+            // foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
+            //    printf($row);
+            // }
             echo "Second attempt";
             $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
