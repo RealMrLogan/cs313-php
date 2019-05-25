@@ -18,7 +18,7 @@ main {
    justify-content: space-between;
 }
 
-main a {
+.options a, main h2 {
    padding: 10px;
    background-color: black;
    color: white;
@@ -28,9 +28,10 @@ main a {
    border: 1px solid black;
    margin: 10px 0;
    font-size: 1.5em;
+   text-decoration: none;
 }
 
-main a:hover {
+.options a:hover, main h2:hover {
    background-color: lightgrey;
    color: black;
    border: 1px solid black;
