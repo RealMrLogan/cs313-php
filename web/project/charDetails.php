@@ -17,10 +17,14 @@
          <?php
             // Get the database connection file
             require_once 'connections.php';
-            $person = $_GET["person"];
+            $person = $_POST["person"];
             echo "Person: " . $person;
-
-            $stmt = $db->prepare('SELECT * FROM character WHERE book=:person');
+            echo "First attempt";
+            foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
+               printf($row);
+            }
+            echo "Second attempt";
+            $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -29,7 +33,7 @@
                foreach ($rows as $row)
                {
                   echo "Got the person!";
-                  echo $row;
+                  prinf($row);
                }
             }
          ?>

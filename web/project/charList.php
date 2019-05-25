@@ -25,7 +25,12 @@
          require_once 'connections.php';
          foreach ($db->query('SELECT * FROM character') as $row)
          {
-            echo "<form action='charDetails.php' method='get'><input type='submit' name='person' value='".$row['person']."'></form>";
+            ?>
+            <form action="charDetails.php" method="post">
+               <input type="submit" value="<?php echo $row['person']; ?>">
+            </form>
+            <?php
+            // echo "<form action='charDetails.php' method='POST'><input type='submit' name='person' value='".$row['person']."'></form>";
          }
          ?>
       </section>
