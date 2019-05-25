@@ -16,18 +16,16 @@
    <hr>
    <main>
       <section class="options">
-         <form action="charDetails.php" method="get">
+         <!-- <form action="charDetails.php" method="get">
             <input type="submit" name="person" value="test">
-         </form>
+         </form> -->
 
          <?php
          // Get the database connection file
          require_once 'connections.php';
          foreach ($db->query('SELECT * FROM character') as $row)
          {
-            echo $row;
             echo "<form action='charDetails.php' method='get'><input type='submit' name='person' value='".$row['person']."'></form>";
-            // echo "<a href='charDetails.php&person=" . $row['person'] ."'>" . $row['person'] . "</a>";
          }
          ?>
       </section>
