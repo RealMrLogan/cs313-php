@@ -35,8 +35,6 @@
             if (isset($rows)) {
                foreach ($rows as $row)
                {
-                  echo "Got something!";
-                  print_r($row);
                   if ($row['weaponname']) {
                      ?>
                      <label>Weapon: <?php echo $row['weaponname']; ?></label> <br>

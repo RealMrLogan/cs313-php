@@ -17,11 +17,10 @@
          <?php
             // Get the database connection file
             require_once '../connections.php';
-            $person = $_GET["person"];
-            echo "Person: " . $person . "<br>";
+            $person = $_GET["displayname"];
 
-            $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
-            $stmt->bindValue(':person', $person, PDO::PARAM_STR);
+            $stmt = $db->prepare('SELECT * FROM character WHERE displayname=:displayname');
+            $stmt->bindValue(':displayname', $person, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -32,7 +31,7 @@
                   // print_r($row);
                   ?>
                   <br> <br>
-                  <label for="person">Person: <?php echo $row['person']; ?></label> <br>
+                  <label for="person">Person: <?php echo $row['displayname']; ?></label> <br>
                   <label for="hitpoints">Hit Points: <?php echo $row['hitpoints']; ?></label> <br>
                   <label for="damage">Damage: <?php echo $row['damage']; ?></label> <br>
                   <label for="armor">Armor: <?php echo $row['armor']; ?></label> <br>
