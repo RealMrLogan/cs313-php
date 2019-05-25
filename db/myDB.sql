@@ -46,7 +46,7 @@ duration 		   int
 
 -- INSERT template: INSERT INTO table(column1, column2, ...)
 --                  VALUES (value1, value2, ...);
--- Add a character
+-- ADD A CHARACTER
 -- Add a player
 INSERT INTO character(person, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
 VALUES ('player1', 100, 20, 10, 10, NULL, NULL, NULL, NULL, false);
@@ -56,3 +56,27 @@ VALUES ('npc1', 50, 5, 0, 0, NULL, NULL, NULL, NULL, false);
 -- Add an enemy
 INSERT INTO character(person, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
 VALUES ('enemy1', 75, 10, 10, 0, NULL, NULL, NULL, NULL, false);
+
+-- ADD A WEAPON
+-- add a sword
+INSERT INTO weapon(weaponname, damage, range, durability)
+VALUES ('sword', 20, 10, 100);
+-- add a bow
+INSERT INTO weapon(weaponname, damage, range, durability)
+VALUES ('long bow', 10, 40, 75);
+
+-- ADD A PROTECTION
+-- add a breastplate
+INSERT INTO protection(protectionname, armor, durability)
+VALUES ('breastplate', 20, 100);
+-- add a helmet
+INSERT INTO protection(protectionname, armor, durability)
+VALUES ('helmet', 12, 100);
+
+-- ADD A SPELL
+-- add a fireball
+INSERT INTO spell(spellname, damage, range, cost, cooldown)
+VALUES ('fireball', 10, 30, 5, 5);
+-- add a lightning bolt
+INSERT INTO spell(spellname, damage, range, cost, cooldown)
+VALUES ('lightning bolt', 8, 15, 3, 3);

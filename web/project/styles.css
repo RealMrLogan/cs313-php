@@ -36,3 +36,8 @@ main {
    color: black;
    border: 1px solid black;
 }
+
+.options legend {
+   font-size: 2em;
+   text-align: center;
+}
