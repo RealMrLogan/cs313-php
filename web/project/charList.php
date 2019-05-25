@@ -26,7 +26,7 @@
          foreach ($db->query('SELECT * FROM character') as $row)
          {
             ?>
-            <form action="charDetails.php" method="post">
+            <form action="charDetails.php" method="get">
                <input type="submit" value="<?php echo $row['person']; ?>">
             </form>
             <?php

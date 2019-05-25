@@ -17,13 +17,13 @@
          <?php
             // Get the database connection file
             require_once 'connections.php';
-            $person = $_POST["person"];
+            $person = $_GET["person"];
             echo "Person: " . $person;
-            echo "First attempt";
+            echo "First attempt<br>";
             // foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
             //    printf($row);
             // }
-            echo "Second attempt";
+            echo "Second attempt<br>";
             $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
             $stmt->execute();
