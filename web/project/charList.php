@@ -26,8 +26,7 @@
          foreach ($db->query('SELECT * FROM character') as $row)
          {
             echo $row;
-            echo "<form action='charDetails.php' method='get'>
-                     <input type='submit' name='person' value='".$row['person']."'></form>"
+            echo "<form action='charDetails.php' method='get'><input type='submit' name='person' value='".$row['person']."'></form>";
             // echo "<a href='charDetails.php&person=" . $row['person'] ."'>" . $row['person'] . "</a>";
          }
          ?>
