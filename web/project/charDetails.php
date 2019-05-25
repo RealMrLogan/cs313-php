@@ -20,10 +20,17 @@
             $person = $_GET["person"];
             echo "Person: " . $person;
 
-            foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row)
-            {
-               echo "Got the person!";
-               echo $row;
+            $stmt = $db->prepare('SELECT * FROM character WHERE book=:person');
+            $stmt->bindValue(':person', $person, PDO::PARAM_STR);
+            $stmt->execute();
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if (isset($rows)) {
+               foreach ($rows as $row)
+               {
+                  echo "Got the person!";
+                  echo $row;
+               }
             }
          ?>
       </section>
