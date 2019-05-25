@@ -19,12 +19,7 @@
             require_once 'connections.php';
             $person = $_GET["person"];
             echo "Person: " . $person . "<br>";
-            echo "First attempt<br>";
-            foreach ($db->query("SELECT * FROM character WHERE person=$person") as $row) {
-               printf($row);
-            }
 
-            echo "Second attempt<br>";
             $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
             $stmt->execute();
@@ -34,7 +29,7 @@
                foreach ($rows as $row)
                {
                   echo "Got the person!";
-                  prinf($row);
+                  prinf($rows);
                }
             }
          ?>
