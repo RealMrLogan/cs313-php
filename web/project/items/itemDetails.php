@@ -28,15 +28,6 @@
                $query = $_GET["spell"];
                $stmnt = $db->prepare('SELECT * FROM spell WHERE spellname=:query');
             }
-            echo "Query: " . $query . "<br>";
-            // $statement = $db->prepare("SELECT * FROM character WHERE person='$person'");
-            // $statement.execute();
-            // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            //    echo "Got something!";
-            //    echo $row['person'] . " " . $row['weaponname'];
-            // }
-
-            // $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmnt->bindValue(':query', $query, PDO::PARAM_STR);
             $stmnt->execute();
             $rows = $stmnt->fetchAll(PDO::FETCH_ASSOC);
@@ -45,8 +36,29 @@
                foreach ($rows as $row)
                {
                   echo "Got something!";
-                  print_r($rows);
                   print_r($row);
+                  if ($row['weaponname']) {
+                     ?>
+                     <label>Weapon: <?php echo $row['weaponname']; ?></label> <br>
+                     <label>Damage: <?php echo $row['damage']; ?></label> <br>
+                     <label>Range: <?php echo $row['range']; ?></label> <br>
+                     <label>Durability: <?php echo $row['durability']; ?></label>
+                     <?php
+                  } else if ($row['protectionname']) {
+                     ?>
+                     <label>Protection: <?php echo $row['protectionname']; ?></label> <br>
+                     <label>Armor: <?php echo $row['armor']; ?></label> <br>
+                     <label>Durability: <?php echo $row['durability']; ?></label>
+                     <?php
+                  } else if ($row['spellname']) {
+                     ?>
+                     <label>Spell: <?php echo $row['spellname']; ?></label> <br>
+                     <label>Damage: <?php echo $row['damage']; ?></label> <br>
+                     <label>Range: <?php echo $row['range']; ?></label> <br>
+                     <label>Cost: <?php echo $row['cost']; ?></label> <br>
+                     <label>Cooldown: <?php echo $row['cooldown']; ?></label>
+                     <?php
+                  }
                }
             }
          ?>
