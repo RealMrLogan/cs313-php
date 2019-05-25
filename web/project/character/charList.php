@@ -25,6 +25,7 @@
          require_once '../connections.php';
          foreach ($db->query('SELECT * FROM character') as $row)
          {
+            print_r($row);
             ?>
             <form action="charDetails.php" method="get">
                <input type="submit" name="displayname" value="<?php echo $row['displayname']; ?>">
