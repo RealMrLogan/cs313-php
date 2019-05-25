@@ -19,6 +19,12 @@
             require_once 'connections.php';
             $person = $_GET["person"];
             echo "Person: " . $person . "<br>";
+            $statement = $db->prepare("SELECT * FROM character WHERE person='$person'");
+            $statement.execute();
+            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+               echo "Got something!";
+               echo $row['person'] . " " . $row['weaponname'];
+            }
 
             $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
             $stmt->bindValue(':person', $person, PDO::PARAM_STR);
