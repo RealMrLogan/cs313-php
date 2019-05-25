@@ -35,7 +35,7 @@
                foreach ($rows as $row)
                {
                   echo "Got the person!";
-                  prinf($rows);
+                  printf($rows);
                }
             }
          ?>

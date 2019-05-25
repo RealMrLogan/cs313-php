@@ -18,14 +18,14 @@
             // Get the database connection file
             require_once '../connections.php';
             $stmnt = 0;
-            if (isset($_GET["weaponname"])) {
-               $query = $_GET["weaponname"];
+            if (isset($_GET["weapon"])) {
+               $query = $_GET["weapon"];
                $stmnt = $db->prepare('SELECT * FROM weapon WHERE weaponname=:query');
-            } else if (isset($_GET["protectionname"])) {
-               $query = $_GET["protectionname"];
+            } else if (isset($_GET["protection"])) {
+               $query = $_GET["protection"];
                $stmnt = $db->prepare('SELECT * FROM weapon WHERE protectionname=:query');
-            } else if (isset($_GET["spellname"])) {
-               $query = $_GET["spellname"];
+            } else if (isset($_GET["spell"])) {
+               $query = $_GET["spell"];
                $stmnt = $db->prepare('SELECT * FROM weapon WHERE spellname=:query');
             }
             echo "Query: " . $query . "<br>";
