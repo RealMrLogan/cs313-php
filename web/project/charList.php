@@ -26,11 +26,12 @@
          foreach ($db->query('SELECT * FROM character') as $row)
          {
             ?>
-            <!-- <form action="charDetails.php" method="get">
-               <input type="submit" value="<?php echo $row['person']; ?>">
-            </form> -->
+            <form action="charDetails.php" method="get">
+               <input type="text" name="person" id="" value="<?php echo $row['person']; ?>" style="display:none;">
+               <input type="submit">
+            </form>
             <?php
-            echo "<form action='charDetails.php' method='GET'><input type='submit' name='person' value='".$row['person']."'></form>";
+            // echo "<form action='charDetails.php' method='GET'><input type='submit' name='person' value='".$row['person']."'></form>";
          }
          ?>
       </section>
