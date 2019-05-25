@@ -9,7 +9,7 @@
 </head>
 <body>   
    <header>
-      <h1>Character List</h1>
+      <h1>Item Details</h1>
    </header>
    <hr>
    <main>
@@ -45,8 +45,8 @@
                foreach ($rows as $row)
                {
                   echo "Got something!";
-                  printf($rows);
-                  printf($row);
+                  print_r($rows);
+                  print_r($row);
                }
             }
          ?>

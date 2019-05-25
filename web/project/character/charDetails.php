@@ -9,7 +9,7 @@
 </head>
 <body>   
    <header>
-      <h1>Character List</h1>
+      <h1>character Details</h1>
    </header>
    <hr>
    <main>
@@ -35,7 +35,7 @@
                foreach ($rows as $row)
                {
                   echo "Got the person!";
-                  printf($rows);
+                  print_r($rows);
                }
             }
          ?>
