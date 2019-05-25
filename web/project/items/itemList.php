@@ -18,16 +18,13 @@
       <section class="options">
          <fieldset>
             <legend>Weapons</legend>
-            <form action="charDetails.php" method="get">
-               <input type="submit" value="test">
-            </form>
             <?php
             // Get the database connection file
             require_once '../connections.php';
             foreach ($db->query('SELECT * FROM weapon') as $row)
             {
                ?>
-               <form action="charDetails.php" method="get">
+               <form action="itemDetails.php" method="get">
                   <input type="submit" value="<?php echo $row['weaponname']; ?>">
                </form>
             <?php
@@ -42,7 +39,7 @@
             foreach ($db->query('SELECT * FROM protection') as $row)
             {
                ?>
-               <form action="charDetails.php" method="get">
+               <form action="itemDetails.php" method="get">
                   <input type="submit" value="<?php echo $row['protectionname']; ?>">
                </form>
             <?php
@@ -57,7 +54,7 @@
             foreach ($db->query('SELECT * FROM spell') as $row)
             {
                ?>
-               <form action="charDetails.php" method="get">
+               <form action="itemDetails.php" method="get">
                   <input type="submit" value="<?php echo $row['spellname']; ?>">
                </form>
             <?php

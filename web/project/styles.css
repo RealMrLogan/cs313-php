@@ -37,6 +37,10 @@ main {
    border: 1px solid black;
 }
 
+.options fieldset {
+   width: 100%;
+}
+
 .options legend {
    font-size: 2em;
    text-align: center;

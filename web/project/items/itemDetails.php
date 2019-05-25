@@ -17,8 +17,18 @@
          <?php
             // Get the database connection file
             require_once '../connections.php';
-            $person = $_GET["person"];
-            echo "Person: " . $person . "<br>";
+            $stmnt = 0;
+            if (isset($_GET["weaponname"])) {
+               $query = $_GET["weaponname"];
+               $stmnt = $db->prepare('SELECT * FROM weapon WHERE weaponname=:query');
+            } else if (isset($_GET["protectionname"])) {
+               $query = $_GET["protectionname"];
+               $stmnt = $db->prepare('SELECT * FROM weapon WHERE protectionname=:query');
+            } else if (isset($_GET["spellname"])) {
+               $query = $_GET["spellname"];
+               $stmnt = $db->prepare('SELECT * FROM weapon WHERE spellname=:query');
+            }
+            echo "Query: " . $query . "<br>";
             // $statement = $db->prepare("SELECT * FROM character WHERE person='$person'");
             // $statement.execute();
             // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
@@ -26,16 +36,17 @@
             //    echo $row['person'] . " " . $row['weaponname'];
             // }
 
-            $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
-            $stmt->bindValue(':person', $person, PDO::PARAM_STR);
+            // $stmt = $db->prepare('SELECT * FROM character WHERE person=:person');
+            $stmt->bindValue(':query', $query, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             if (isset($rows)) {
                foreach ($rows as $row)
                {
-                  echo "Got the person!";
-                  prinf($rows);
+                  echo "Got something!";
+                  printf($rows);
+                  printf($row);
                }
             }
          ?>
