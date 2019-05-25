@@ -22,7 +22,7 @@
 
          <?php
          // Get the database connection file
-         require_once 'connections.php';
+         require_once '../connections.php';
          echo "test";
          foreach ($db->query('SELECT * FROM character') as $row)
          {

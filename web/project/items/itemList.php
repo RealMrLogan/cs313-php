@@ -38,7 +38,7 @@
             <legend>Protection</legend>
             <?php
             // Get the database connection file
-            require_once 'connections.php';
+            require_once '../connections.php';
             foreach ($db->query('SELECT * FROM protection') as $row)
             {
                ?>

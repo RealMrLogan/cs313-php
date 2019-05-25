@@ -16,7 +16,7 @@
       <section class="charDetails">
          <?php
             // Get the database connection file
-            require_once 'connections.php';
+            require_once '../connections.php';
             $person = $_GET["person"];
             echo "Person: " . $person . "<br>";
             $statement = $db->prepare("SELECT * FROM character WHERE person='$person'");
