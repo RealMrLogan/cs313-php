@@ -15,7 +15,17 @@ main {
 .options {
    display: flex;
    flex-wrap: wrap;
+   justify-content: center;
+}
+
+.options div {
+   display: flex;
+   width: 100%;
    justify-content: space-between;
+}
+
+.options > a:last-child {
+   background-color: darkred;
 }
 
 .options a, form input[type="submit"] {

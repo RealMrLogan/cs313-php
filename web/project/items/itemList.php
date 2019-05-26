@@ -12,6 +12,9 @@
 <body>
    <header>
       <h1>Item List</h1>
+      <nav>
+         <a href="../index.html">&larr; Home</a>
+      </nav>
    </header>
    <hr>
    <main>

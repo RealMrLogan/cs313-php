@@ -10,6 +10,10 @@
 <body>   
    <header>
       <h1>Item Details</h1>
+      <nav>
+         <a href="../index.html">&larr; Home</a>
+         <a href="itemList.php">&mdash; Item List</a>
+      </nav>
    </header>
    <hr>
    <main>

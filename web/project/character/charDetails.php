@@ -10,6 +10,10 @@
 <body>   
    <header>
       <h1>Character Details</h1>
+      <nav>
+         <a href="../index.html">&larr; Home</a>
+         <a href="charList.php">&mdash; Character List</a>
+      </nav>
    </header>
    <hr>
    <main>
