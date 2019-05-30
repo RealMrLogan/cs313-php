@@ -8,7 +8,12 @@
 </head>
 <body>
    <main>
-      
+      <form action="index.php" method="post">
+         Book: <input type="text" name="book">
+         Chapter: <input type="number" name="chapter">
+         Verse: <input type="number" name="verse">
+         Content: <textarea name="content" id="" cols="30" rows="10"></textarea>
+      </form>
    </main>
 </body>
 </html>
