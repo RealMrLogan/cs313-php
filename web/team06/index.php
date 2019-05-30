@@ -27,9 +27,19 @@
       <?php
       // Get the database connection file
       require_once 'connections.php';
-
+         var_dump($_POST);
       if (isset($_POST)) {
-         $db->exec('INSERT INTO scripture(book, chapter, verse, content) VALUES($_POST["book"], $_POST["chapter"], $_POST["verse"], $_POST["content"])');
+         $book = $_POST["book"];
+         $chapter = $_POST["chapter"];
+         $verse = $_POST["verse"];
+         $content = $_POST["content"];
+
+         echo "Book: $book";
+         echo "Chapter: $chapter";
+         echo "Verse: $verse";
+         echo "Content: $content";
+         // $db->prepare('INSERT INTO scripture(book, chapter, verse, content) VALUES($_POST["book"], $_POST["chapter"], $_POST["verse"], $_POST["content"])');
+         // $db->exec('INSERT INTO scripture(book, chapter, verse, content) VALUES($_POST["book"], $_POST["chapter"], $_POST["verse"], $_POST["content"])');
       }
       ?>
    </main>
