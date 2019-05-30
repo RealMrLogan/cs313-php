@@ -33,13 +33,13 @@
          $chapter = $_POST["chapter"];
          $verse = $_POST["verse"];
          $content = $_POST["content"];
-
-         echo "Book: $book";
-         echo "Chapter: $chapter";
-         echo "Verse: $verse";
-         echo "Content: $content";
-         // $db->prepare('INSERT INTO scripture(book, chapter, verse, content) VALUES($_POST["book"], $_POST["chapter"], $_POST["verse"], $_POST["content"])');
-         // $db->exec('INSERT INTO scripture(book, chapter, verse, content) VALUES($_POST["book"], $_POST["chapter"], $_POST["verse"], $_POST["content"])');
+         
+         $stmnt = $db->prepare('INSERT INTO scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)');
+         $stmnt->bindValue(':book', $book, PDO::PARAM_STR);
+         $stmnt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
+         $stmnt->bindValue(':verse', $verse, PDO::PARAM_STR);
+         $stmnt->bindValue(':content', $content, PDO::PARAM_STR);
+         $stmnt->execute();
       }
       ?>
    </main>
