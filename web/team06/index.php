@@ -13,7 +13,25 @@
          Chapter: <input type="number" name="chapter">
          Verse: <input type="number" name="verse">
          Content: <textarea name="content" id="" cols="30" rows="10"></textarea>
+         <?php
+         // Get the database connection file
+         require_once 'connections.php';
+
+         foreach ($db->query('SELECT * FROM topics') as $row)
+         {
+            echo '<input type="checkbox" name="$row["topic_id"]">' . $row['name'];
+         }
+         ?>
+         <input type="submit" value="">
       </form>
+      <?php
+      // Get the database connection file
+      require_once 'connections.php';
+
+      if (isset($_POST)) {
+
+      }
+      ?>
    </main>
 </body>
 </html>
