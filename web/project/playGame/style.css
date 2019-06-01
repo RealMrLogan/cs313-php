@@ -2,15 +2,8 @@
    width: 49%;
 }
 
-.options label {
-   margin: 10px;
-   width: 100px;
-   height: 40px;
-}
-
 .options input[type="radio"] {
-   opacity: 0.011;
-   z-index: 2;
+   display: none;
 }
 
 .options input[type="radio"]:checked+label {
@@ -18,10 +11,13 @@
 }
 
 .options label {
+   margin: 10px;
    padding: 5px;
-   border: 1px solid #CCC;
+   background-color: black;
+   color: white;
+   border: 1px solid black;
    cursor: pointer;
-   z-index: 1;
+   font-size: 1.5em;
 }
 
 .options label:hover {
