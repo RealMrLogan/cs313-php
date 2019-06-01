@@ -13,7 +13,7 @@ if (isset($_POST)) {
             $dur = filter_input(INPUT_POST, 'durability', FILTER_SANITIZE_STRING);
 
             $stmnt = $db->prepare('INSERT INTO character(displayname, damage, range, durability) 
-                                       VALUES(:name, :damage, :range, durability)');
+                                       VALUES(:name, :damage, :range, :durability)');
             $stmnt->bindValue(':name', $name, PDO::PARAM_STR);
             $stmnt->bindValue(':damage', $damage, PDO::PARAM_STR);
             $stmnt->bindValue(':range', $range, PDO::PARAM_STR);
