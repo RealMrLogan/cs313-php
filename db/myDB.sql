@@ -21,8 +21,8 @@ isdead   		   boolean
 
 -- Create the weapon table
 CREATE TABLE weapon (
+weaponid       	SERIAL PRIMARY KEY,
 displayname       varchar(80),
-weaponname       	varchar(80),
 damage   		   int,
 range   		      int,
 durability       	int
