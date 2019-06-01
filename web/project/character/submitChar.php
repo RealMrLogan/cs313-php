@@ -5,6 +5,7 @@
    if (isset($_POST)) {
       try {
          $name = filter_input(INPUT_POST, 'displayname', FILTER_SANITIZE_STRING);
+         // TODO: check for duplicate name
          $hp = filter_input(INPUT_POST, 'hitpoints', FILTER_SANITIZE_STRING);
          $damage = filter_input(INPUT_POST, 'damage', FILTER_SANITIZE_STRING);
          $armor = filter_input(INPUT_POST, 'armor', FILTER_SANITIZE_STRING);

@@ -6,8 +6,8 @@
  */
 -- Create the character table
 CREATE TABLE character (
+characterid       SERIAL PRIMARY KEY,
 displayname       varchar(80),
-person		      varchar(80),
 hitpoints         int,
 damage   		   int,
 armor    		   int,
@@ -63,14 +63,14 @@ duration 		   int
 --                  VALUES (value1, value2, ...);
 -- ADD A CHARACTER
 -- Add a player
-INSERT INTO character(displayname, person, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
-VALUES ('Player One', 'player1', 100, 20, 10, 10, NULL, NULL, NULL, NULL, false);
+INSERT INTO character(displayname, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
+VALUES ('Player One', 100, 20, 10, 10, NULL, NULL, NULL, NULL, false);
 -- Add an NPC
-INSERT INTO character(displayname, person, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
-VALUES ('Civilian', 'npc1', 50, 5, 0, 0, NULL, NULL, NULL, NULL, false);
+INSERT INTO character(displayname, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
+VALUES ('Civilian', 50, 5, 0, 0, NULL, NULL, NULL, NULL, false);
 -- Add an enemy
-INSERT INTO character(displayname, person, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
-VALUES ('Enemy', 'enemy1', 75, 10, 10, 0, NULL, NULL, NULL, NULL, false);
+INSERT INTO character(displayname, hitpoints, damage, armor, magic, weaponname, protectionname, spellname, buffname, isdead)
+VALUES ('Enemy', 75, 10, 10, 0, NULL, NULL, NULL, NULL, false);
 
 -- ADD A WEAPON
 -- add a sword

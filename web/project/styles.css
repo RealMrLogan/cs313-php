@@ -47,6 +47,10 @@ main {
    border: 1px solid black;
 }
 
+.options form {
+   margin: 5px;
+}
+
 .options fieldset {
    width: 100%;
 }
