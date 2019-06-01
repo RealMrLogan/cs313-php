@@ -39,6 +39,7 @@
             if (isset($rows)) {
                foreach ($rows as $row)
                {
+                  var_dump($row);
                   if ($row['weaponid']) {
                      ?>
                      <label>Weapon: <?php echo $row['displayname']; ?></label> <br>
