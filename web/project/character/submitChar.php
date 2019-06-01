@@ -9,7 +9,6 @@
          $damage = filter_input(INPUT_POST, 'damage', FILTER_SANITIZE_STRING);
          $armor = filter_input(INPUT_POST, 'armor', FILTER_SANITIZE_STRING);
          $magic = filter_input(INPUT_POST, 'magic', FILTER_SANITIZE_STRING);
-         $notDead = false;
          
          $stmnt = $db->prepare('INSERT INTO character(displayname, hitpoints, damage, armor, magic, isdead) 
                                  VALUES(:name, :hp, :damage, :armor, :magic, false)');
@@ -21,7 +20,8 @@
          // $stmnt->bindValue(':notdead', $notDead, PDO::PARAM_STR);
          $stmnt->execute();
 
-         echo "Created $name!"
+         echo "Created $name!";
+         header("Location: charList.php");
       } catch (Exception $e) {
          echo 'Error when trying to add the character';
          echo 'Message: ' .$e->getMessage();
