@@ -12,7 +12,7 @@ if (isset($_POST)) {
             $range = filter_input(INPUT_POST, 'range', FILTER_SANITIZE_STRING);
             $dur = filter_input(INPUT_POST, 'durability', FILTER_SANITIZE_STRING);
 
-            $stmnt = $db->prepare('INSERT INTO weapon(displayname, damage, range, durability) 
+            $stmnt = $db->prepare('INSERT INTO weapons(displayname, damage, range, durability) 
                                        VALUES(:name, :damage, :range, :durability)');
             $stmnt->bindValue(':name', $name, PDO::PARAM_STR);
             $stmnt->bindValue(':damage', $damage, PDO::PARAM_STR);

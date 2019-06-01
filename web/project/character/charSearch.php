@@ -28,7 +28,7 @@
          require_once '../connections.php';
          $query = filter_input(INPUT_POST, 'search-query', FILTER_SANITIZE_STRING);
 
-         $stmt = $db->prepare('SELECT * FROM character WHERE displayname=:displayname');
+         $stmt = $db->prepare('SELECT * FROM characters WHERE displayname=:displayname');
          $stmt->bindValue(':displayname', $query, PDO::PARAM_STR);
          $stmt->execute();
          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);

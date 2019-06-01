@@ -24,7 +24,7 @@
             <?php
             // Get the database connection file
             require_once '../connections.php';
-            foreach ($db->query('SELECT * FROM weapon') as $row)
+            foreach ($db->query('SELECT * FROM weapons') as $row)
             {
                ?>
                <form action="itemDetails.php" method="get">
@@ -54,7 +54,7 @@
             <?php
             // Get the database connection file
             require_once '../connections.php';
-            foreach ($db->query('SELECT * FROM spell') as $row)
+            foreach ($db->query('SELECT * FROM spells') as $row)
             {
                ?>
                <form action="itemDetails.php" method="get">

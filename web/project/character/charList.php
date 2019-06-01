@@ -26,7 +26,7 @@
          <?php
          // Get the database connection file
          require_once '../connections.php';
-         foreach ($db->query('SELECT * FROM character') as $row)
+         foreach ($db->query('SELECT * FROM characters') as $row)
          {
             ?>
             <form action="charDetails.php" method="get">

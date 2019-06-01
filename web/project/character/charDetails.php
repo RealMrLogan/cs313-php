@@ -23,7 +23,7 @@
             require_once '../connections.php';
             $person = $_GET["displayname"];
 
-            $stmt = $db->prepare('SELECT * FROM character WHERE displayname=:displayname');
+            $stmt = $db->prepare('SELECT * FROM characters WHERE displayname=:displayname');
             $stmt->bindValue(':displayname', $person, PDO::PARAM_STR);
             $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
