@@ -1,6 +1,6 @@
 <?php
    // Get the database connection file
-   require_once 'connections.php';
+   require_once '../connections.php';
    var_dump($_POST);
          
    // if (isset($_POST)) {
