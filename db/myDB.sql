@@ -20,7 +20,7 @@ isdead   		   boolean
 );
 
 -- Create the weapon table
-CREATE TABLE weapon (
+CREATE TABLE weapons (
 id       	      SERIAL PRIMARY KEY,
 displayname       varchar(80),
 damage   		   int,
@@ -29,7 +29,7 @@ durability       	int
 );
 
 -- Create the spell table
-CREATE TABLE spell (
+CREATE TABLE spells (
 id       	      SERIAL PRIMARY KEY,
 displayname       varchar(80),
 damage   		   int,
@@ -74,10 +74,10 @@ VALUES ('Enemy', 75, 10, 10, 0, false);
 
 -- ADD A WEAPON
 -- add a sword
-INSERT INTO weapon(displayname, damage, range, durability)
+INSERT INTO weapons(displayname, damage, range, durability)
 VALUES ('Sword', 20, 10, 100);
 -- add a bow
-INSERT INTO weapon(displayname, damage, range, durability)
+INSERT INTO weapons(displayname, damage, range, durability)
 VALUES ('Long Bow', 10, 40, 75);
 
 -- ADD A PROTECTION
@@ -90,8 +90,8 @@ VALUES ('Helmet', 12, 100);
 
 -- ADD A SPELL
 -- add a fireball
-INSERT INTO spell(displayname, damage, range, cost, cooldown)
+INSERT INTO spells(displayname, damage, range, cost, cooldown)
 VALUES ('Fire Ball', 10, 30, 5, 5);
 -- add a lightning bolt
-INSERT INTO spell(displayname, damage, range, cost, cooldown)
+INSERT INTO spells(displayname, damage, range, cost, cooldown)
 VALUES ('Lightning Bolt', 8, 15, 3, 3);
