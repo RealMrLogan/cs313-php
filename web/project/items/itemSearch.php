@@ -32,12 +32,21 @@
       <?php
          // Get the database connection file
          require_once '../connections.php';
-         print_r($_POST);
          $query = filter_input(INPUT_POST, 'search-query', FILTER_SANITIZE_STRING);
          $type = "";
-         if (isset($_POST['weapon'])) { $type = "weapons"; }
-         else if (isset($_POST['protection'])) { $type = "protection"; }
-         else if (isset($_POST['spell'])) { $type = "spells"; }
+         if (isset($_POST['type'])) {
+            switch($_POST['type']) {
+               case "weapon":
+               $type = "weapons";
+               break;
+               case "protection":
+               $type = "protection";
+               break;
+               case "spell":
+               $type = "spells";
+               break;
+            }
+         }
 
          $stmt = $db->prepare("SELECT * FROM $type WHERE displayname=:displayname");
          $stmt->bindValue(':displayname', $query, PDO::PARAM_STR);
