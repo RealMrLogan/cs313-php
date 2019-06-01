@@ -21,9 +21,9 @@
       <form action="itemSearch.php" method="post">
          <fieldset>
             <legend>Which category?</legend>
-            <input type="radio" name="weapon"> <label>Weapon</label>
-            <input type="radio" name="protection"> <label>Protection</label>
-            <input type="radio" name="spell"> <label>Spell</label>
+            <input type="radio" name="type" value="weapon"> <label>Weapon</label>
+            <input type="radio" name="type" value="protection"> <label>Protection</label>
+            <input type="radio" name="type" value="spell"> <label>Spell</label>
          </fieldset>
          <label for="">Which Item: </label><input type="text" name="search-query">
          <input type="submit" value="Search">
@@ -32,6 +32,7 @@
       <?php
          // Get the database connection file
          require_once '../connections.php';
+         print_r($_POST);
          $query = filter_input(INPUT_POST, 'search-query', FILTER_SANITIZE_STRING);
          $type = "";
          if (isset($_POST['weapon'])) { $type = "weapons"; }
