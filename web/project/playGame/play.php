@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,12 +23,9 @@
    <hr>
    <main>
       <section class="options">
+         <form action="storeGamePieces.php" method="post">
          <fieldset>
             <legend>Choose Your Character</legend>
-            <!-- <input type="radio" name="player" value="test" id="player-test">
-            <label for="player-test">Test</label>
-            <input type="radio" name="player" value="test" id="player-test2">
-            <label for="player-test2">Test</label> -->
             <?php
             // Get the database connection file
             require_once '../connections.php';
@@ -43,10 +39,6 @@
          </fieldset>
          <fieldset>
             <legend>Choose Your Opponent</legend>
-            <!-- <input type="radio" name="opponent" value="test" id="opponent-test">
-            <label for="opponent-test">Test</label>
-            <input type="radio" name="opponent" value="test" id="opponent-test2">
-            <label for="opponent-test2">Test</label> -->
             <?php
             // Get the database connection file
             require_once '../connections.php';
@@ -58,6 +50,8 @@
          }
          ?>
          </fieldset>
+         <input type="submit" value="Next">
+         </form>
       </section>
    </main>
 </body>
