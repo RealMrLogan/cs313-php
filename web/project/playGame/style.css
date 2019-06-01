@@ -1,5 +1,7 @@
 .options fieldset {
    width: 49%;
+   padding: 20px;
+   display: flex;
 }
 
 .options input[type="radio"] {
