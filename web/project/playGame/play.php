@@ -24,33 +24,35 @@
    <main>
       <section class="options">
          <form action="storeGamePieces.php" method="post">
-         <fieldset>
-            <legend>Choose Your Character</legend>
-            <?php
-            // Get the database connection file
-            require_once '../connections.php';
-            foreach ($db->query('SELECT * FROM characters') as $row) {
+            <div>
+               <fieldset>
+                  <legend>Choose Your Character</legend>
+                  <?php
+                  // Get the database connection file
+                  require_once '../connections.php';
+                  foreach ($db->query('SELECT * FROM characters') as $row) {
+                     ?>
+                     <input type="radio" name="player" value="<?php echo $row['displayname']; ?>" id="player-<?php echo $row['id']; ?>">
+                     <label for="player-<?php echo $row['id']; ?>"><?php echo $row['displayname']; ?></label>
+                  <?php
+               }
                ?>
-               <input type="radio" name="player" value="<?php echo $row['displayname']; ?>" id="player-<?php echo $row['id']; ?>">
-               <label for="player-<?php echo $row['id']; ?>"><?php echo $row['displayname']; ?></label>
-            <?php
-         }
-         ?>
-         </fieldset>
-         <fieldset>
-            <legend>Choose Your Opponent</legend>
-            <?php
-            // Get the database connection file
-            require_once '../connections.php';
-            foreach ($db->query('SELECT * FROM characters') as $row) {
+               </fieldset>
+               <fieldset>
+                  <legend>Choose Your Opponent</legend>
+                  <?php
+                  // Get the database connection file
+                  require_once '../connections.php';
+                  foreach ($db->query('SELECT * FROM characters') as $row) {
+                     ?>
+                     <input type="radio" name="opponent" value="<?php echo $row['displayname']; ?>" id="opponent-<?php echo $row['id']; ?>">
+                     <label for="opponent-<?php echo $row['id']; ?>"><?php echo $row['displayname']; ?></label>
+                  <?php
+               }
                ?>
-               <input type="radio" name="opponent" value="<?php echo $row['displayname']; ?>" id="opponent-<?php echo $row['id']; ?>">
-               <label for="opponent-<?php echo $row['id']; ?>"><?php echo $row['displayname']; ?></label>
-            <?php
-         }
-         ?>
-         </fieldset>
-         <input type="submit" value="Next">
+               </fieldset>
+            </div>
+            <input type="submit" value="Next">
          </form>
       </section>
    </main>
