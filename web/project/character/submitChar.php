@@ -12,13 +12,13 @@
          $notDead = false;
          
          $stmnt = $db->prepare('INSERT INTO character(displayname, hitpoints, damage, armor, magic, isdead) 
-                                 VALUES(:name, :hp, :damage, :armor, :magic, :notdead)');
+                                 VALUES(:name, :hp, :damage, :armor, :magic, false)');
          $stmnt->bindValue(':name', $name, PDO::PARAM_STR);
          $stmnt->bindValue(':hp', $hp, PDO::PARAM_STR);
          $stmnt->bindValue(':damage', $damage, PDO::PARAM_STR);
          $stmnt->bindValue(':armor', $armor, PDO::PARAM_STR);
          $stmnt->bindValue(':magic', $magic, PDO::PARAM_STR);
-         $stmnt->bindValue(':notdead', $notDead, PDO::PARAM_STR);
+         // $stmnt->bindValue(':notdead', $notDead, PDO::PARAM_STR);
          $stmnt->execute();
 
          echo "Created $name!"
