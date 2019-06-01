@@ -39,6 +39,50 @@
          </fieldset>
          <input type="submit" value="Submit">
       </form>
+      <hr>
+      <form action="submitItem.php" method="post">
+            <h2>Protection</h2>
+            <input name="type" value="protection" style="display:none;">
+            <fieldset>
+               <legend>Display Name</legend>
+               <input type="text" name="displayname">
+            </fieldset>
+            <fieldset>
+               <legend>Armor</legend>
+               <input type="number" name="armor">
+            </fieldset>
+            <fieldset>
+               <legend>Durability</legend>
+               <input type="number" name="durability">
+            </fieldset>
+            <input type="submit" value="Submit">
+         </form>
+         <hr>
+         <form action="submitItem.php" method="post">
+               <h2>Spell</h2>
+               <input name="type" value="spell" style="display:none;">
+               <fieldset>
+                  <legend>Display Name</legend>
+                  <input type="text" name="displayname">
+               </fieldset>
+               <fieldset>
+                  <legend>Damage</legend>
+                  <input type="number" name="damage">
+               </fieldset>
+               <fieldset>
+                  <legend>Range</legend>
+                  <input type="number" name="range">
+               </fieldset>
+               <fieldset>
+                  <legend>Cost</legend>
+                  <input type="number" name="cost">
+               </fieldset>
+               <fieldset>
+                  <legend>Cooldown</legend>
+                  <input type="number" name="cooldown">
+               </fieldset>
+               <input type="submit" value="Submit">
+            </form>
    </main>
 </body>
 
