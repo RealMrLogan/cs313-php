@@ -19,16 +19,17 @@ if (isset($_POST)) {
       $statement->execute();
       // Go through each result
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-         $_SESSION['player'] = $row;
+         console_log($row);
+         // $_SESSION['player'] = $row;
       }
 
-      $opponent = $_POST["opponent"];
-      $statement = $db->prepare("SELECT * FROM characters WHERE displayname = $opponent");
-      $statement->execute();
-      // Go through each result
-      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-         $_SESSION['opponent'] = $row;
-      }
+      // $opponent = $_POST["opponent"];
+      // $statement = $db->prepare("SELECT * FROM characters WHERE displayname = $opponent");
+      // $statement->execute();
+      // // Go through each result
+      // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      //    $_SESSION['opponent'] = $row;
+      // }
       // header("Location: weaponSelect.php");
    } else if (isset($_POST['player-weapon']) && isset($_POST['opponent-weapon'])) {
       $_SESSION['player-weapon'] = $_POST['player-weapon'];
