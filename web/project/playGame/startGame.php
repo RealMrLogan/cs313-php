@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-function sendToJS($output) {
+function sendToJS($output)
+{
    $js_code = json_encode($output, JSON_HEX_TAG);
    echo '<script>const sessionObj=' . $js_code . ';</script>';
 }
@@ -29,8 +30,9 @@ sendToJS($_SESSION);
    </header>
    <hr>
    <main>
-      <section class="options">
-      </section>
+      <p id="coin-flip">Fipping Coin to see who goes first...
+         <img src="../images/coinflip.gif" alt="Coin Flip">
+      </p>
    </main>
    <script src="startGame.js"></script>
 </body>
