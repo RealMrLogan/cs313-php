@@ -16,13 +16,14 @@ if (isset($_POST)) {
       require_once '../connections.php';
       $player = $_POST["player"];
       console_log($player);
-      // $statement = $db->prepare("SELECT * FROM characters WHERE displayname = $player");
-      // $statement->execute();
+      $statement = $db->prepare("SELECT * FROM characters WHERE displayname = :player");
+      $statement->bindValue(':player', $player);
+      $statement->execute();
       // // Go through each result
-      // while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      //    console_log($row);
-      //    // $_SESSION['player'] = $row;
-      // }
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         console_log($row);
+         $_SESSION['player'] = $row;
+      }
 
       // $opponent = $_POST["opponent"];
       // $statement = $db->prepare("SELECT * FROM characters WHERE displayname = $opponent");
