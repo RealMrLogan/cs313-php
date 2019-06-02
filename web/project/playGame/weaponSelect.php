@@ -27,6 +27,9 @@
             <div>
                <fieldset>
                   <legend>Choose Your Weapon</legend>
+                  <input type="radio" name="player-weapon" value="bare" id="player--1">
+                  <label for="player--1">Bare Handed></label>
+                  
                   <?php
                   // Get the database connection file
                   require_once '../connections.php';
@@ -40,6 +43,9 @@
                </fieldset>
                <fieldset>
                   <legend>Choose Your Opponent's Weapon</legend>
+                  <input type="radio" name="opponent-weapon" value="bare" id="opponent--1">
+                  <label for="opponent--1">Bare Handed></label>
+
                   <?php
                   foreach ($db->query('SELECT * FROM weapons') as $row) {
                      ?>
