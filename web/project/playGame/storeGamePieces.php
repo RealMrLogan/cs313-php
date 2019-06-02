@@ -8,11 +8,6 @@ function console_log($output, $with_script_tags = true) {
    echo $js_code;
 }
 
-function sendToJS($output) {
-   $js_code = json_encode($output, JSON_HEX_TAG);
-   echo '<script>const sessionObj=' . $js_code . ';</script>';
-}
-
 // add the game pieces to the session
 if(isset($_POST)) {
    if(isset($_POST['player']) && isset($_POST['opponent'])) { // they selected their characters

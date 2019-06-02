@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+function sendToJS($output) {
+   $js_code = json_encode($output, JSON_HEX_TAG);
+   echo '<script>const sessionObj=' . $js_code . ';</script>';
+}
+
+sendToJS($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +19,6 @@
    <link rel="stylesheet" href="style.css">
    <title>Game</title>
 </head>
-<script>
-   alert("Instructions: Select your character and select an opposing character");
-</script>
 
 <body>
    <header>
