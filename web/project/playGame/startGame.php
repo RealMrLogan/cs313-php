@@ -33,6 +33,9 @@ sendToJS($_SESSION);
       <p id="coin-flip">Fipping Coin to see who goes first...
          <img src="../images/coinflip.gif" alt="Coin Flip">
       </p>
+      <section class="options" id="player-options">
+         <button onclick="">Attack</button>
+      </section>
    </main>
    <script src="startGame.js"></script>
 </body>
