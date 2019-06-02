@@ -17,7 +17,7 @@
    <header>
       <h1>Weapon Selection</h1>
       <nav>
-         <a href="index.html">&larr; Home</a>
+         <a href="../index.html">&larr; Home</a>
       </nav>
    </header>
    <hr>
