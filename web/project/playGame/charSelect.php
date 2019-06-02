@@ -41,8 +41,6 @@
                <fieldset>
                   <legend>Choose Your Opponent</legend>
                   <?php
-                  // Get the database connection file
-                  require_once '../connections.php';
                   foreach ($db->query('SELECT * FROM characters') as $row) {
                      ?>
                      <input type="radio" name="opponent" value="<?php echo $row['displayname']; ?>" id="opponent-<?php echo $row['id']; ?>">

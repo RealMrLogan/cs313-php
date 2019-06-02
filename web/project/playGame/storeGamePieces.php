@@ -10,12 +10,12 @@ function console_log($output, $with_script_tags = true) {
 
 // add the game pieces to the session
 if(isset($_POST)) {
-   if(isset($_POST['player'])) {
+   if(isset($_POST['player']) && isset($_POST['opponent'])) { // they selected their characters
       $_SESSION['player'] = $_POST['player'];
-   }
-   if(isset($_POST['opponent'])) {
       $_SESSION['opponent'] = $_POST['opponent'];
+      header("Location: itemList.php");
+   } else if (isset($_POST['player-weapon']) && isset($_POST['opponent-weapon'])) {
+      
    }
 }
-console_log($_SESSION);
 ?>
