@@ -17,7 +17,8 @@ if(isset($_POST)) {
    } else if (isset($_POST['player-weapon']) && isset($_POST['opponent-weapon'])) {
       $_SESSION['player-weapon'] = $_POST['player-weapon'];
       $_SESSION['opponent-weapon'] = $_POST['opponent-weapon'];
-      header("Location: weaponSelect.php");
+      // header("Location: weaponSelect.php");
    }
 }
+console_log($_SESSION);
 ?>

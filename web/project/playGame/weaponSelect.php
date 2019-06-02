@@ -39,9 +39,9 @@
                ?>
                </fieldset>
                <fieldset>
-                  <legend>Choose Your Opponent</legend>
+                  <legend>Choose Your Opponent's Weapon</legend>
                   <?php
-                  foreach ($db->query('SELECT * FROM characters') as $row) {
+                  foreach ($db->query('SELECT * FROM weapons') as $row) {
                      ?>
                      <input type="radio" name="opponent-weapon" value="<?php echo $row['displayname']; ?>" id="opponent-<?php echo $row['id']; ?>">
                      <label for="opponent-<?php echo $row['id']; ?>"><?php echo $row['displayname']; ?></label>
