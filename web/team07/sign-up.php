@@ -18,16 +18,14 @@ session_start();
          if (isset($_SESSION['message'])) {
             echo $_SESSION['message'];
          }
-         ?>
-         <?php
          if (isset($_SESSION['nomatchmessage'])) {
             echo $_SESSION['nomatchmessage'];
          }
          ?>
          <p id="message"></p>
-         <form method="post" action="sign-up_page.php">
+         <form method="post" action="sign-up.php">
             <label for="userName">Name:</label><br>
-            <input type="text" id="userName" name="userName" pattern="[A-Za-z ]{3,}" required><br>
+            <input type="text" id="userName" name="userName" pattern="[A-Za-z]{3,}" required><br>
             <label for="userPassword">Password:</label><br>
             <span class="passworddescription">Password must be at least 7 characters and contain at least 1 number</span><br>
             <input onchange="myFunction()" type="password" name="userPassword" id="userPassword" pattern="[A-Za-z\d]{7,}" required><span class="asterix"></span><?php if (isset($_SESSION['nomatchmessage'])) {
@@ -67,7 +65,7 @@ session_start();
 
          if ($userPassword != $duplicateUserPassword) {
             $_SESSION['nomatchmessage'] = "<p class='messagefailure' style='color:red'>The passwords that you have entered do not match. Please, check your password and try again.</p>";
-            header("Location: sign-up_page.php");
+            header("Location: sign-up.php");
             exit;
          }
 
@@ -79,7 +77,7 @@ session_start();
          // and return to the login view
          if ($checkedUserPassword == 0) {
             $_SESSION['message'] = "<p class='messagefailure'>Please, check your password and try again.</p>";
-            header("Location: sign-up_page.php");
+            header("Location: sign-up.php");
             exit;
          }
 
@@ -96,11 +94,11 @@ session_start();
          // Check and report the result and create the cookie when the individual registers with the site
          if ($signUpOutcome === 1) {
             $_SESSION['message'] = "<p class='messagesuccess'>Thanks for registering. Please, use your email and password to login.</p>";
-            header("Location: sign-in_page.php");
+            header("Location: sign-in.php");
             exit;
          } else {
             $message = "<p class='messagefailure'>Sorry, but the registration failed. Please, try again.</p>";
-            header("Location: sign-up_page.php");
+            header("Location: sign-up.php");
             exit;
          }
       }
