@@ -1,7 +1,6 @@
 <?php
 // Get the database connection file
 require("../connections.php");
-$db = dbConnection();
 // Start the session
 session_start();
 ?>
