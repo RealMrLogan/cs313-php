@@ -71,8 +71,7 @@ session_start();
 
          $pattern = '/[A-Za-z\d]{7,}/';
          $checkedUserPassword = preg_match($pattern, $userPassword);
-         print_r($pattern);
-         print_r($checked);
+         print_r($checkedUserPassword);
          // If the password doesn't match the pattern
          // and return to the login view
          if ($checkedUserPassword == 0) {
