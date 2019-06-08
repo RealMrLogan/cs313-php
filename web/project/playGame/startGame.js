@@ -31,6 +31,8 @@ function gameLoop() {
    document.getElementById("coin-flip").style.display = "none";
    ShowCharacterStats();
    if (sessionObj.player.hitpoints > 0 && sessionObj.opponent.hitpoints > 0) {
+      console.log(`${sessionObj.turn}'s turn`);
+      
       switch (sessionObj.turn) {
          case "player":
             document.getElementById("player-options").style.display = "flex";
@@ -82,6 +84,7 @@ function makeMove(actor, action, subject) {
          sessionObj.turn = "player";
          break;
    }
+   gameLoop(); // loop
 }
 
 function ShowCharacterStats() {
