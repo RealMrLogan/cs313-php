@@ -74,16 +74,29 @@ function makeMove(actor, action, subject) {
          let damage = actor.damage;
          // add the weapon damage
          if (actor.weaponid) { // a weapon is selected
-            damage += actor.weaponid.damage
+            if (actor.weaponid.durability > 0) { // weapon isn't broken
+               damage += actor.weaponid.damage;
+               actor.weaponid.durability -= actor.weaponid.damage;
+               if (actor.weaponid.durability <= 0) {
+                  alert(`${actor.displayname}'s weapon ${actor.weaponid.displayname} broke`);
+               }
+            }
          }
          // subtract the base armor
          damage -= subject.armor;
          // subtract the protection armor
          if (subject.protectionid) { // protection is on
-            if (subject.protectionid.armor >= damage) {
-               damage = 0;
-            } else {
-               damage -= subject.protectionid.armor;
+            if (subject.protectionid.durability > 0) { // protection is not broken
+               if (subject.protectionid.armor >= damage) {
+                  damage = 0;
+               } else {
+                  damage -= subject.protectionid.armor;
+               }
+               subject.protectionid.durability -= damage;
+
+               if (actor.protectionid.durability <= 0) {
+                  alert(`${actor.displayname}'s protection ${actor.protectionid.displayname} broke`);
+               }
             }
          }
          // apply the damage
