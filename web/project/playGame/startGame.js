@@ -33,7 +33,7 @@ function gameLoop() {
    ShowCharacterStats();
    if (sessionObj.player.hitpoints > 0 && sessionObj.opponent.hitpoints > 0) {
       console.log(`${sessionObj.turn}'s turn`);
-      
+
       switch (sessionObj.turn) {
          case "player":
             document.getElementById("player-options").style.display = "flex";
@@ -66,18 +66,24 @@ function showPlayeroptions() {
 function makeMove(actor, action, subject) {
    switch (action) {
       case "attack":
+         // add the base damage
+         let damage = actor.damage;
          // add the weapon damage
-         let damage = (actor.damage + actor.weaponid.damage || 0); // modify using weapon and buffs
+         if (actor.weaponid) { // a weapon is selected
+            damage += actor.weaponid.damage
+         }
          // subtract the base armor
          damage -= subject.armor;
          // subtract the protection armor
-         if (subject.protectionid.armor >= damage) {
-            damage = 0;
-            subject.hitpoints -= damage;
-         } else {
-            damage -= subject.protectionid.armor
-            subject.hitpoints -= damage;
+         if (subject.protectionid) { // protection is on
+            if (subject.protectionid.armor >= damage) {
+               damage = 0;
+            } else {
+               damage -= subject.protectionid.armor;
+            }
          }
+         // apply the damage
+         subject.hitpoints -= damage;
          // display what happened
          alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
          break;
