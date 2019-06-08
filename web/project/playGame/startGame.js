@@ -37,7 +37,7 @@ function gameLoop() {
             document.getElementById("player-options").style.display = "flex";
             break;
          case "opponent":
-            makeMove(sessionObj.opponent, "attack", sessionObj.player);
+            botOptions();
             break;
       }
    } else { // someone won
@@ -51,20 +51,45 @@ function gameLoop() {
 }
 
 function playerAttackWeapon() {
-   document.getElementById("player-options").style.display = "none";
+   hidePlayeroptions();
    makeMove(sessionObj.player, "attack", sessionObj.opponent);
 }
 
+function playerAttackSpell() {
+   hidePlayeroptions();
+   makeMove(sessionObj.player, "spellAttack", sessionObj.opponent);
+}
+
 function playerDefend() {
-   document.getElementById("player-options").style.display = "none";
+   hidePlayeroptions();
    makeMove(sessionObj.player, "defend", sessionObj.opponent);
+}
+
+function botOptions() {
+   let decision;
+   if (sessionObj.opponent.spellid) { // there is a spell
+      decision = Math.floor(Math.random() * 10) % 3;
+   } else {
+      decision = Math.floor(Math.random() * 10) % 2;
+   }
+   switch (decision) {
+      case 0: // attack
+         makeMove(sessionObj.opponent, "attack", sessionObj.player);
+         break;
+      case 1: // defend
+         makeMove(sessionObj.opponent, "defend", sessionObj.player);
+         break;
+      case 2: // spell attack
+         makeMove(sessionObj.opponent, "spellAttack", sessionObj.player);
+         break;
+   }
 }
 
 function showPlayeroptions() {
    document.getElementById("player-options").style.display = "flex";
 }
-function showPlayeroptions() {
-   document.getElementById("player-options").style.display = "flex";
+function hidePlayeroptions() {
+   document.getElementById("player-options").style.display = "none";
 }
 
 function makeMove(actor, action, subject) {
@@ -88,9 +113,10 @@ function makeMove(actor, action, subject) {
          if (subject.protectionid) { // protection is on
             if (subject.protectionid.durability > 0) { // protection is not broken
                if (subject.protectionid.armor >= damage) {
-                  damage = 0;
+                  damage /= 2; // if the protection is stronger, cut the damage in half
                } else {
                   damage -= subject.protectionid.armor;
+                  subject.protectionid.durability -= damage / 2;
                }
                subject.protectionid.durability -= damage;
 
@@ -107,9 +133,25 @@ function makeMove(actor, action, subject) {
          // display what happened
          alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
          break;
+      case "spellAttack":
+         let damage = 0;
+         // check for cost
+         if (actor.magic >= actor.spellid.cost) {
+            actor.magic -= actor.spellid.cost;
+            damage = actor.spellid.damage;
+         } else {
+            alert(`${actor.displayname} does not have enough magic to cast that spell`);
+         }
+
+         subject.hitpoints -= damage;
+         break;
       case "defend":
          actor.armor *= 1.5;
          break;
+   }
+   // add more magic if they have a spell
+   if (actor.spellid) {
+      actor.magic += 10;
    }
 
    // display the results

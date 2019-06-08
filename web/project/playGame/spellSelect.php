@@ -27,7 +27,7 @@
             <div>
                <fieldset>
                   <legend>Choose Your Spell</legend>
-                  <input type="radio" name="player-weapon" value="No Spell" id="player--1">
+                  <input type="radio" name="player-spell" value="No Spell" id="player--1">
                   <label for="player--1">No Spell</label>
                   
                   <?php
