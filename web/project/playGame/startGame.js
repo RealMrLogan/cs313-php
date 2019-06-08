@@ -28,10 +28,11 @@ function decideWhoGoesFirst() {
 }
 
 function gameLoop() {
+   ShowCharacterStats();
    if (sessionObj.player.hitpoints > 0 && sessionObj.opponent.hitpoints > 0) {
       switch (sessionObj.turn) {
          case "player":
-            displayPlayerOptions();
+            // displayPlayerOptions();
             break;
          case "opponent":
             makeMove(sessionObj.opponent, "attack", sessionObj.player);
