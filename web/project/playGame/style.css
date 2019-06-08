@@ -36,3 +36,14 @@
 #player-options {
    display: none;
 }
+
+/* Character stats */
+.character-stats {
+   display: flex;
+   justify-content: space-between;
+   position: absolute;
+   bottom: 0;
+   width: inherit;
+   background-color: black;
+   color: white;
+}

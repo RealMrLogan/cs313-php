@@ -82,5 +82,15 @@ function makeMove(actor, action, subject) {
 }
 
 function ShowCharacterStats() {
-   
+   // update the player stats
+   document.getElementById("player-name").innerHTML = sessionObj.player.displayname;
+   document.getElementById("player-hp").innerHTML = sessionObj.player.hitpoints;
+   document.getElementById("player-weapon").innerHTML = sessionObj.player.weaponid;
+   // document.getElementById("player-protection").innerHTML = sessionObj.player.protectionid;
+
+   //update the opponent stats
+   document.getElementById("opponent-name").innerHTML = sessionObj.opponent.displayname;
+   document.getElementById("opponent-hp").innerHTML = sessionObj.opponent.hitpoints;
+   document.getElementById("opponent-weapon").innerHTML = sessionObj.opponent.weaponid;
+   // document.getElementById("opponent-protection").innerHTML = sessionObj.opponent.protectionid;
 }
