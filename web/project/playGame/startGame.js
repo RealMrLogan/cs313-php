@@ -18,10 +18,10 @@ function decideWhoGoesFirst() {
    const first = Math.floor(Math.random() * 10) % 2;
    console.log(first);
    if (first == 1) { // Player goes first
-      document.getElementById("coin-flip").innerHTML = "You go first! Loading Game";
+      document.getElementById("coin-flip").innerHTML = "You go first! Loading Game...";
       sessionObj.turn = "player";
    } else { // opponent goes first
-      document.getElementById("coin-flip").innerHTML = "Opponent goes first! Loading Game";
+      document.getElementById("coin-flip").innerHTML = "Opponent goes first! Loading Game...";
       sessionObj.turn = "opponent";
    }
    setTimeout(gameLoop, 1000);

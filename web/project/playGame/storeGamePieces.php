@@ -31,10 +31,12 @@ if (isset($_POST)) {
          $_SESSION['opponent'] = $row;
       }
       header("Location: weaponSelect.php");
+      die();
    } else if (isset($_POST['player-weapon']) && isset($_POST['opponent-weapon'])) {
-      $_SESSION['player'] = $_POST['player-weapon'];
-      $_SESSION['opponent-weapon'] = $_POST['opponent-weapon'];
+      $_SESSION['player']['weaponid'] = $_POST['player-weapon'];
+      $_SESSION['opponent']['weaponid'] = $_POST['opponent-weapon'];
       header("Location: startGame.php");
+      die();
    }
 }
 console_log($_SESSION);
