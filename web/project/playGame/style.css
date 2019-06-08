@@ -37,6 +37,10 @@
    display: none;
 }
 
+#start-over {
+   display: none;
+}
+
 /* Character stats */
 .stats-section {
    display: flex;

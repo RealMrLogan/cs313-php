@@ -35,7 +35,8 @@ sendToJS($_SESSION);
          <img src="../images/coinflip.gif" alt="Coin Flip">
       </p>
       <section class="options" id="player-options">
-         <button onclick="playerAttack()">Attack</button>
+         <button onclick="playerAttackWeapon()">Attack w/ Weapon</button>
+         <button onclick="playerDefend()">Defend</button>
       </section>
    </main>
 

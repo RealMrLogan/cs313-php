@@ -50,9 +50,14 @@ function gameLoop() {
    }
 }
 
-function playerAttack() {
+function playerAttackWeapon() {
    document.getElementById("player-options").style.display = "none";
    makeMove(sessionObj.player, "attack", sessionObj.opponent);
+}
+
+function playerDefend() {
+   document.getElementById("player-options").style.display = "none";
+   makeMove(sessionObj.player, "defend", sessionObj.opponent);
 }
 
 function showPlayeroptions() {
@@ -85,6 +90,9 @@ function makeMove(actor, action, subject) {
          subject.hitpoints -= damage;
          // display what happened
          alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
+         break;
+      case "defend":
+         actor.armor *= 1.5;
          break;
    }
 
