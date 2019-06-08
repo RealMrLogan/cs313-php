@@ -16,7 +16,7 @@ function decideWhoGoesFirst() {
 
    // find who goes first
    const first = Math.floor(Math.random() * 10) % 2;
-   console.log(first);
+   console.log("Coin Result:", first);
    if (first == 1) { // Player goes first
       document.getElementById("coin-flip").innerHTML = "You go first! Loading Game...";
       sessionObj.turn = "player";
@@ -38,10 +38,18 @@ function gameLoop() {
             break;
       }
    } else { // someone won
-
+      if (sessionObj.player.hitpoints > 0) {
+         alert("You won!");
+      } else {
+         alert("Opponent won!");
+      }
    }
 }
 
+function playerAttack() {
+   makeMove(sessionObj.player, "attack", sessionObj.opponent);
+}
+
 function showPlayeroptions() {
    document.getElementById("player-options").style.display = "flex";
 }
@@ -49,16 +57,30 @@ function showPlayeroptions() {
    document.getElementById("player-options").style.display = "flex";
 }
 
-function makeMove(person, action, affectedPerson) {
+function makeMove(actor, action, subject) {
    switch (action) {
       case "attack":
-         const damage = person.damage; // modify using weapon and buffs
-         affectedPerson.hitpoints -= damage;
+         const damage = actor.damage; // modify using weapon and buffs
+         subject.hitpoints -= damage;
+         // display what happened
+         alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
          break;
    }
-   // switch (person) {
-   //    case "":
-   //       break;
 
-   // }
+   // display the results
+   ShowCharacterStats();
+
+   // change who's turn it is
+   switch (sessionObj.turn) {
+      case "player":
+         sessionObj.turn = "opponent";
+         break;
+      case "opponent":
+         sessionObj.turn = "player";
+         break;
+   }
+}
+
+function ShowCharacterStats() {
+   
 }
