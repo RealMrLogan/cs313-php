@@ -57,3 +57,7 @@
 .character-stats div {
    display: flex;
 }
+
+.tab {
+   margin-left: 20px;
+}

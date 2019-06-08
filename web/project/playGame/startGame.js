@@ -114,13 +114,17 @@ function ShowCharacterStats() {
    }
    if (!sessionObj.player.weaponid) { // no weapon selected; null
       document.getElementById("player-weapon").innerHTML = "Bare Handed";
+      document.getElementById("player-weapon-damage").innerHTML = 0;
    } else {
       document.getElementById("player-weapon").innerHTML = sessionObj.player.weaponid.displayname;
+      document.getElementById("player-weapon-damage").innerHTML = sessionObj.player.weaponid.damage;
    }
    if (!sessionObj.player.protectionid) {
       document.getElementById("player-protection").innerHTML = "None";
+      document.getElementById("player-protection-armor").innerHTML = "0";
    } else {
       document.getElementById("player-protection").innerHTML = sessionObj.player.protectionid.displayname;
+      document.getElementById("player-protection").innerHTML = sessionObj.player.protectionid.armor;
    }
 
    //update the opponent stats
@@ -132,12 +136,16 @@ function ShowCharacterStats() {
    }
    if (!sessionObj.opponent.weaponid) { // no weapon selected; null
       document.getElementById("opponent-weapon").innerHTML = "Bare Handed";
+      document.getElementById("opponent-weapon-damage").innerHTML = 0;
    } else {
       document.getElementById("opponent-weapon").innerHTML = sessionObj.opponent.weaponid.displayname;
+      document.getElementById("opponent-weapon-damage").innerHTML = sessionObj.opponent.weaponid.damage;
    }
    if (!sessionObj.opponent.protectionid) {
       document.getElementById("opponent-protection").innerHTML = "None";
+      document.getElementById("opponent-protection-armor").innerHTML = "0";
    } else {
       document.getElementById("opponent-protection").innerHTML = sessionObj.opponent.protectionid.displayname;
+      document.getElementById("opponent-protection").innerHTML = sessionObj.opponent.protectionid.armor;
    }
 }

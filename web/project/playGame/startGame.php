@@ -37,7 +37,7 @@ sendToJS($_SESSION);
          <button onclick="playerAttack()">Attack</button>
       </section>
    </main>
-   
+
    <section class="stats-section">
       <div class="character-stats">
          <h3 id="player-name"></h3>
@@ -45,10 +45,22 @@ sendToJS($_SESSION);
             <h4>Hitpoints: </h4><label class="stat-label" id="player-hp"></label>
          </div>
          <div>
+            <h4 class="tab">Base Damage: </h4><label class="stat-label" id="player-damage"></label>
+         </div>
+         <div>
+            <h4 class="tab">Base Armor: </h4><label class="stat-label" id="player-armor"></label>
+         </div>
+         <div>
             <h4>Equipped Weapon: </h4><label class="stat-label" id="player-weapon"></label>
          </div>
          <div>
+            <h4 class="tab">Damage: </h4><label class="stat-label" id="player-weapon-damage"></label>
+         </div>
+         <div>
             <h4>Equipped Protection: </h4><label class="stat-label" id="player-protection"></label>
+         </div>
+         <div>
+            <h4 class="tab">Armor: </h4><label class="stat-label" id="player-protection-armor"></label>
          </div>
       </div>
       <div class="character-stats">
@@ -57,10 +69,22 @@ sendToJS($_SESSION);
             <h4>Hitpoints: </h4><label class="stat-label" id="opponent-hp"></label>
          </div>
          <div>
+            <h4 class="tab">Base Damage: </h4><label class="stat-label" id="opponent-damage"></label>
+         </div>
+         <div>
+            <h4 class="tab">Base Armor: </h4><label class="stat-label" id="opponent-armor"></label>
+         </div>
+         <div>
             <h4>Equipped Weapon: </h4><label class="stat-label" id="opponent-weapon"></label>
          </div>
          <div>
+            <h4 class="tab">Damage: </h4><label class="stat-label" id="opponent-weapon-damage"></label>
+         </div>
+         <div>
             <h4>Equipped Protection: </h4><label class="stat-label" id="opponent-protection"></label>
+         </div>
+         <div>
+            <h4 class="tab">Armor: </h4><label class="stat-label" id="opponent-protection-armor"></label>
          </div>
       </div>
    </section>
