@@ -66,11 +66,17 @@ function showPlayeroptions() {
 function makeMove(actor, action, subject) {
    switch (action) {
       case "attack":
-         const damage = actor.damage + actor.weaponid.damage || 0; // modify using weapon and buffs
+         // add the weapon damage
+         let damage = (actor.damage + actor.weaponid.damage || 0); // modify using weapon and buffs
+         // subtract the base armor
+         damage -= subject.armor;
+         // subtract the protection armor
          if (subject.protectionid.armor >= damage) {
-            subject.hitpoints -= 0;
+            damage = 0;
+            subject.hitpoints -= damage;
          } else {
-            subject.hitpoints -= (damage - subject.protectionid.armor);
+            damage -= subject.protectionid.armor
+            subject.hitpoints -= damage;
          }
          // display what happened
          alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
