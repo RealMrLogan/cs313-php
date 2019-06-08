@@ -100,6 +100,9 @@ function makeMove(actor, action, subject) {
             }
          }
          // apply the damage
+         if (damage < 0) { // don't apply negative damage
+            damage = 0;
+         }
          subject.hitpoints -= damage;
          // display what happened
          alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);

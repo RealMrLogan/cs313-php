@@ -23,7 +23,6 @@ if (isset($_POST)) {
          $_SESSION['player'] = $row;
       }
 
-      // $opponent = $_POST["opponent"];
       $statement = $db->prepare("SELECT * FROM characters WHERE displayname = :opponent");
       $statement->bindValue(':opponent', $_POST["opponent"]);
       $statement->execute();
@@ -66,6 +65,24 @@ if (isset($_POST)) {
       // // Go through each result
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
          $_SESSION['opponent']['protectionid'] = $row;
+      }
+      header("Location: spellSelect.php");
+      die();
+   } else if (isset($_POST['player-spell']) && isset($_POST['opponent-spell'])) {
+      $statement = $db->prepare("SELECT * FROM spells WHERE displayname = :spell");
+      $statement->bindValue(':spell', $_POST["player-spell"]);
+      $statement->execute();
+      // // Go through each result
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         $_SESSION['player']['spellid'] = $row;
+      }
+
+      $statement = $db->prepare("SELECT * FROM spells WHERE displayname = :spell");
+      $statement->bindValue(':spell', $_POST["opponent-spell"]);
+      $statement->execute();
+      // // Go through each result
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         $_SESSION['opponent']['spellid'] = $row;
       }
       header("Location: startGame.php");
       die();
