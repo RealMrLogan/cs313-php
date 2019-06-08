@@ -40,12 +40,18 @@
 /* Character stats */
 .stats-section {
    display: flex;
-   justify-content: space-between;
+   justify-content: space-around;
    position: absolute;
    bottom: 0;
-   width: inherit;
+   width: 100%;
    background-color: black;
    color: white;
+   padding-bottom: 20px;
+}
+
+.stats-section h4 {
+   margin: 0;
+   padding-right: 5px;
 }
 
 .character-stats div {

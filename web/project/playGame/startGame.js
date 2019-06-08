@@ -33,7 +33,7 @@ function gameLoop() {
    if (sessionObj.player.hitpoints > 0 && sessionObj.opponent.hitpoints > 0) {
       switch (sessionObj.turn) {
          case "player":
-            // displayPlayerOptions();
+            document.getElementById("player-options").style.display = "flex";
             break;
          case "opponent":
             makeMove(sessionObj.opponent, "attack", sessionObj.player);
@@ -49,6 +49,7 @@ function gameLoop() {
 }
 
 function playerAttack() {
+   document.getElementById("player-options").style.display = "none";
    makeMove(sessionObj.player, "attack", sessionObj.opponent);
 }
 
