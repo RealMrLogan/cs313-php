@@ -134,7 +134,7 @@ function makeMove(actor, action, subject) {
          alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
          break;
       case "spellAttack":
-         let damage = 0;
+         damage = 0; // reset the variable
          // check for cost
          if (actor.magic >= actor.spellid.cost) {
             actor.magic -= actor.spellid.cost;
