@@ -28,6 +28,7 @@ function decideWhoGoesFirst() {
 }
 
 function gameLoop() {
+   document.getElementById("coin-flip").style.display = "none";
    ShowCharacterStats();
    if (sessionObj.player.hitpoints > 0 && sessionObj.opponent.hitpoints > 0) {
       switch (sessionObj.turn) {
