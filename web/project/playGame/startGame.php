@@ -30,6 +30,7 @@ sendToJS($_SESSION);
    </header>
    <hr>
    <main>
+      <a href="../index.html" id="start-over">Start Over</a>
       <p id="coin-flip">Fipping Coin to see who goes first...
          <img src="../images/coinflip.gif" alt="Coin Flip">
       </p>

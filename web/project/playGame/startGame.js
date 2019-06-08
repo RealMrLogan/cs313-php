@@ -32,8 +32,6 @@ function gameLoop() {
    document.getElementById("coin-flip").style.display = "none";
    ShowCharacterStats();
    if (sessionObj.player.hitpoints > 0 && sessionObj.opponent.hitpoints > 0) {
-      console.log(`${sessionObj.turn}'s turn`);
-
       switch (sessionObj.turn) {
          case "player":
             document.getElementById("player-options").style.display = "flex";
@@ -48,6 +46,7 @@ function gameLoop() {
       } else {
          alert("Opponent won!");
       }
+      document.getElementById("start-over").style.display = "block";
    }
 }
 
@@ -112,6 +111,8 @@ function ShowCharacterStats() {
    } else {
       document.getElementById("player-hp").innerHTML = "Dead";
    }
+   document.getElementById("player-damage").innerHTML = sessionObj.player.damage;
+   document.getElementById("player-armor").innerHTML = sessionObj.player.armor;
    if (!sessionObj.player.weaponid) { // no weapon selected; null
       document.getElementById("player-weapon").innerHTML = "Bare Handed";
       document.getElementById("player-weapon-damage").innerHTML = 0;
@@ -134,6 +135,8 @@ function ShowCharacterStats() {
    } else {
       document.getElementById("opponent-hp").innerHTML = "Dead";
    }
+   document.getElementById("opponent-damage").innerHTML = sessionObj.opponent.damage;
+   document.getElementById("opponent-armor").innerHTML = sessionObj.opponent.armor;
    if (!sessionObj.opponent.weaponid) { // no weapon selected; null
       document.getElementById("opponent-weapon").innerHTML = "Bare Handed";
       document.getElementById("opponent-weapon-damage").innerHTML = 0;
@@ -146,6 +149,6 @@ function ShowCharacterStats() {
       document.getElementById("opponent-protection-armor").innerHTML = "0";
    } else {
       document.getElementById("opponent-protection").innerHTML = sessionObj.opponent.protectionid.displayname;
-      document.getElementById("opponent-protection").innerHTML = sessionObj.opponent.protectionid.armor;
+      document.getElementById("opponent-protection-armor").innerHTML = sessionObj.opponent.protectionid.armor;
    }
 }
