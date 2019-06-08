@@ -128,6 +128,12 @@ function makeMove(actor, action, subject) {
 }
 
 function ShowCharacterStats() {
+   showBaseStats();
+   showWeaponStats();
+   showProtectionStats();
+}
+
+function showBaseStats() {
    // update the player stats
    document.getElementById("player-name").innerHTML = sessionObj.player.displayname;
    if (sessionObj.player.hitpoints > 0) {
@@ -137,22 +143,6 @@ function ShowCharacterStats() {
    }
    document.getElementById("player-damage").innerHTML = sessionObj.player.damage;
    document.getElementById("player-armor").innerHTML = sessionObj.player.armor;
-   if (!sessionObj.player.weaponid) { // no weapon selected; null
-      document.getElementById("player-weapon").innerHTML = "Bare Handed";
-      document.getElementById("player-weapon-damage").innerHTML = 0;
-      document.getElementById("player-weapon-durability").innerHTML = 0;
-   } else {
-      document.getElementById("player-weapon").innerHTML = sessionObj.player.weaponid.displayname;
-      document.getElementById("player-weapon-damage").innerHTML = sessionObj.player.weaponid.damage;
-      document.getElementById("player-weapon-durability").innerHTML = sessionObj.player.weaponid.durability;
-   }
-   if (!sessionObj.player.protectionid) {
-      document.getElementById("player-protection").innerHTML = "None";
-      document.getElementById("player-protection-armor").innerHTML = 0;
-   } else {
-      document.getElementById("player-protection").innerHTML = sessionObj.player.protectionid.displayname;
-      document.getElementById("player-protection-armor").innerHTML = sessionObj.player.protectionid.armor;
-   }
 
    //update the opponent stats
    document.getElementById("opponent-name").innerHTML = sessionObj.opponent.displayname;
@@ -163,6 +153,19 @@ function ShowCharacterStats() {
    }
    document.getElementById("opponent-damage").innerHTML = sessionObj.opponent.damage;
    document.getElementById("opponent-armor").innerHTML = sessionObj.opponent.armor;
+}
+
+function showWeaponStats() {
+   if (!sessionObj.player.weaponid) { // no weapon selected; null
+      document.getElementById("player-weapon").innerHTML = "Bare Handed";
+      document.getElementById("player-weapon-damage").innerHTML = 0;
+      document.getElementById("player-weapon-durability").innerHTML = 0;
+   } else {
+      document.getElementById("player-weapon").innerHTML = sessionObj.player.weaponid.displayname;
+      document.getElementById("player-weapon-damage").innerHTML = sessionObj.player.weaponid.damage;
+      document.getElementById("player-weapon-durability").innerHTML = sessionObj.player.weaponid.durability;
+   }
+
    if (!sessionObj.opponent.weaponid) { // no weapon selected; null
       document.getElementById("opponent-weapon").innerHTML = "Bare Handed";
       document.getElementById("opponent-weapon-damage").innerHTML = 0;
@@ -172,6 +175,19 @@ function ShowCharacterStats() {
       document.getElementById("opponent-weapon-damage").innerHTML = sessionObj.opponent.weaponid.damage;
       document.getElementById("opponent-weapon-durability").innerHTML = sessionObj.opponent.weaponid.durability;
    }
+}
+
+function showProtectionStats() {
+   if (!sessionObj.player.protectionid) {
+      document.getElementById("player-protection").innerHTML = "None";
+      document.getElementById("player-protection-armor").innerHTML = 0;
+      document.getElementById("player-protection-durability").innerHTML = 0;
+   } else {
+      document.getElementById("player-protection").innerHTML = sessionObj.player.protectionid.displayname;
+      document.getElementById("player-protection-armor").innerHTML = sessionObj.player.protectionid.armor;
+      document.getElementById("player-protection-durability").innerHTML = sessionObj.player.protectionid.durability;
+   }
+
    if (!sessionObj.opponent.protectionid) {
       document.getElementById("opponent-protection").innerHTML = "None";
       document.getElementById("opponent-protection-armor").innerHTML = 0;
@@ -180,5 +196,31 @@ function ShowCharacterStats() {
       document.getElementById("opponent-protection").innerHTML = sessionObj.opponent.protectionid.displayname;
       document.getElementById("opponent-protection-armor").innerHTML = sessionObj.opponent.protectionid.armor;
       document.getElementById("opponent-protection-durability").innerHTML = sessionObj.opponent.protectionid.durability;
+   }
+}
+
+function showSpellStats() {
+   if (!sessionObj.player.spellid) {
+      document.getElementById("player-spell").innerHTML = "None";
+      document.getElementById("player-spell-damage").innerHTML = 0;
+      document.getElementById("player-spell-cooldown").innerHTML = 0;
+      document.getElementById("player-spell-cost").innerHTML = 0;
+   } else {
+      document.getElementById("player-spell").innerHTML = sessionObj.player.spellid.displayname;
+      document.getElementById("player-spell-damage").innerHTML = sessionObj.player.spellid.damage;
+      document.getElementById("player-spell-cooldown").innerHTML = sessionObj.player.spellid.cooldown;
+      document.getElementById("player-spell-cost").innerHTML = sessionObj.player.spellid.cost;
+   }
+
+   if (!sessionObj.opponent.spellid) {
+      document.getElementById("opponent-spell").innerHTML = "None";
+      document.getElementById("opponent-spell-damage").innerHTML = 0;
+      document.getElementById("opponent-spell-cooldown").innerHTML = 0;
+      document.getElementById("opponent-spell-cost").innerHTML = 0;
+   } else {
+      document.getElementById("opponent-spell").innerHTML = sessionObj.opponent.spellid.displayname;
+      document.getElementById("opponent-spell-damage").innerHTML = sessionObj.opponent.spellid.damage;
+      document.getElementById("opponent-spell-cooldown").innerHTML = sessionObj.opponent.spellid.cooldown;
+      document.getElementById("opponent-spell-cost").innerHTML = sessionObj.opponent.spellid.cost;
    }
 }
