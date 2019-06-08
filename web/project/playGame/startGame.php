@@ -50,7 +50,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Base Damage: </h4><label class="stat-label" id="player-damage"></label>
          </div>
          <div>
-            <h4 class="tab">Base Armor: </h4><label class="stat-label" id="player-armor"></label>
+            <h4 class="tab">Base Defense: </h4><label class="stat-label" id="player-armor"></label>
          </div>
          <div>
             <h4>Equipped Weapon: </h4><label class="stat-label" id="player-weapon"></label>
@@ -59,10 +59,16 @@ sendToJS($_SESSION);
             <h4 class="tab">Damage: </h4><label class="stat-label" id="player-weapon-damage"></label>
          </div>
          <div>
+            <h4 class="tab">Durability: </h4><label class="stat-label" id="player-weapon-durability"></label>
+         </div>
+         <div>
             <h4>Equipped Protection: </h4><label class="stat-label" id="player-protection"></label>
          </div>
          <div>
             <h4 class="tab">Armor: </h4><label class="stat-label" id="player-protection-armor"></label>
+         </div>
+         <div>
+            <h4 class="tab">Durability: </h4><label class="stat-label" id="player-protection-durability"></label>
          </div>
       </div>
       <div class="character-stats">
@@ -74,7 +80,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Base Damage: </h4><label class="stat-label" id="opponent-damage"></label>
          </div>
          <div>
-            <h4 class="tab">Base Armor: </h4><label class="stat-label" id="opponent-armor"></label>
+            <h4 class="tab">Base Defense: </h4><label class="stat-label" id="opponent-armor"></label>
          </div>
          <div>
             <h4>Equipped Weapon: </h4><label class="stat-label" id="opponent-weapon"></label>
@@ -83,10 +89,16 @@ sendToJS($_SESSION);
             <h4 class="tab">Damage: </h4><label class="stat-label" id="opponent-weapon-damage"></label>
          </div>
          <div>
+            <h4 class="tab">Durability: </h4><label class="stat-label" id="opponent-weapon-durability"></label>
+         </div>
+         <div>
             <h4>Equipped Protection: </h4><label class="stat-label" id="opponent-protection"></label>
          </div>
          <div>
             <h4 class="tab">Armor: </h4><label class="stat-label" id="opponent-protection-armor"></label>
+         </div>
+         <div>
+            <h4 class="tab">Durability: </h4><label class="stat-label" id="opponent-protection-durability"></label>
          </div>
       </div>
    </section>
