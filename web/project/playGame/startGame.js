@@ -107,7 +107,11 @@ function makeMove(actor, action, subject) {
 function ShowCharacterStats() {
    // update the player stats
    document.getElementById("player-name").innerHTML = sessionObj.player.displayname;
-   document.getElementById("player-hp").innerHTML = sessionObj.player.hitpoints;
+   if (sessionObj.player.hitpoints > 0) {
+      document.getElementById("player-hp").innerHTML = sessionObj.player.hitpoints;
+   } else {
+      document.getElementById("player-hp").innerHTML = "Dead";
+   }
    if (!sessionObj.player.weaponid) { // no weapon selected; null
       document.getElementById("player-weapon").innerHTML = "Bare Handed";
    } else {
@@ -121,7 +125,11 @@ function ShowCharacterStats() {
 
    //update the opponent stats
    document.getElementById("opponent-name").innerHTML = sessionObj.opponent.displayname;
-   document.getElementById("opponent-hp").innerHTML = sessionObj.opponent.hitpoints;
+   if (sessionObj.opponent.hitpoints > 0) {
+      document.getElementById("opponent-hp").innerHTML = sessionObj.opponent.hitpoints;
+   } else {
+      document.getElementById("opponent-hp").innerHTML = "Dead";
+   }
    if (!sessionObj.opponent.weaponid) { // no weapon selected; null
       document.getElementById("opponent-weapon").innerHTML = "Bare Handed";
    } else {
