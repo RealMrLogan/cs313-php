@@ -49,9 +49,24 @@ if (isset($_POST)) {
       while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
          $_SESSION['opponent']['weaponid'] = $row;
       }
+      header("Location: protectionSelect.php");
+      die();
+   } else if (isset($_POST['player-protection']) && isset($_POST['opponent-protection'])) {
+      $statement = $db->prepare("SELECT * FROM protection WHERE displayname = :protection");
+      $statement->bindValue(':protection', $_POST["player-protection"]);
+      $statement->execute();
+      // // Go through each result
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         $_SESSION['player']['protectionid'] = $row;
+      }
 
-      // $_SESSION['player']['weaponid'] = $_POST['player-weapon'];
-      // $_SESSION['opponent']['weaponid'] = $_POST['opponent-weapon'];
+      $statement = $db->prepare("SELECT * FROM protection WHERE displayname = :protection");
+      $statement->bindValue(':protection', $_POST["opponent-protection"]);
+      $statement->execute();
+      // // Go through each result
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         $_SESSION['opponent']['protectionid'] = $row;
+      }
       header("Location: startGame.php");
       die();
    }
