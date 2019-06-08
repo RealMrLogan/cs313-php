@@ -24,6 +24,7 @@ function decideWhoGoesFirst() {
       document.getElementById("coin-flip").innerHTML = "Opponent goes first! Loading Game...";
       sessionObj.turn = "opponent";
    }
+   ShowCharacterStats();
    setTimeout(gameLoop, 1000);
 }
 

@@ -11,9 +11,10 @@ function console_log($output, $with_script_tags = true)
 
 // add the game pieces to the session
 if (isset($_POST)) {
+   // Get the database connection file
+   require_once '../connections.php';
+
    if (isset($_POST['player']) && isset($_POST['opponent'])) { // they selected their characters
-      // Get the database connection file
-      require_once '../connections.php';
       $statement = $db->prepare("SELECT * FROM characters WHERE displayname = :player");
       $statement->bindValue(':player', $_POST["player"]);
       $statement->execute();
@@ -33,8 +34,24 @@ if (isset($_POST)) {
       header("Location: weaponSelect.php");
       die();
    } else if (isset($_POST['player-weapon']) && isset($_POST['opponent-weapon'])) {
-      $_SESSION['player']['weaponid'] = $_POST['player-weapon'];
-      $_SESSION['opponent']['weaponid'] = $_POST['opponent-weapon'];
+      $statement = $db->prepare("SELECT * FROM weapons WHERE displayname = :weapon");
+      $statement->bindValue(':weapon', $_POST["player-weapon"]);
+      $statement->execute();
+      // // Go through each result
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         $_SESSION['player']['weaponid'] = $row;
+      }
+
+      $statement = $db->prepare("SELECT * FROM weapons WHERE displayname = :weapon");
+      $statement->bindValue(':weapon', $_POST["opponent-weapon"]);
+      $statement->execute();
+      // // Go through each result
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+         $_SESSION['opponent']['weaponid'] = $row;
+      }
+
+      // $_SESSION['player']['weaponid'] = $_POST['player-weapon'];
+      // $_SESSION['opponent']['weaponid'] = $_POST['opponent-weapon'];
       header("Location: startGame.php");
       die();
    }
