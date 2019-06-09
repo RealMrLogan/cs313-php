@@ -51,17 +51,31 @@ section#message-box {
 }
 
 .message {
-   width: 50%;
+   width: 40%;
    border-radius: 10px;
+   padding: 0 10px;
+   margin: 5px 0;
+   font-size: 1.25em;
 }
 
 .player-message {
    text-align: right;
    background-color: lightgreen;
+   margin-left: auto;
+}
+
+.sender-name {
+   text-align: left;
+   font-weight: bold;
+}
+
+.message-text {
+   text-align: left;
 }
 
 .opponent-message {
    background-color: red;
+   margin-right: auto;
 }
 
 /* Character stats */
