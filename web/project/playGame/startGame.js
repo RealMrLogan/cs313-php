@@ -142,11 +142,16 @@ function makeMove(actor, action, subject) {
       case "spellAttack":
          damage = 0; // reset the variable
          // check for cost
-         if (actor.magic >= actor.spellid.cost) {
-            actor.magic -= actor.spellid.cost;
-            damage = actor.spellid.damage;
+         if (actor.spellid) {
+            if (actor.magic >= actor.spellid.cost) {
+               actor.magic -= actor.spellid.cost;
+               damage = actor.spellid.damage;
+            } else {
+               addMesseage(sessionObj.turn, `${actor.displayname} does not have enough magic to cast that spell.`);
+            }
          } else {
-            addMesseage(sessionObj.turn, `${actor.displayname} does not have enough magic to cast that spell`);
+            addMesseage(sessionObj.turn, `${actor.displayname} does not have any spells.`);
+            break;
          }
 
          subject.hitpoints -= damage;
