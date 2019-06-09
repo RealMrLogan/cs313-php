@@ -276,13 +276,15 @@ function showSpellStats() {
 
 function addMesseage(sender, message) {
    const div = document.createElement("div");
+   div.classList.add(`${sender}-message`);
+   div.classList.add(`message`);
    const senderP = document.createElement('p');
-   senderP.classList.add(`${sender}-message`);
+   senderP.classList.add("sender-name");
    senderP.innerHTML = sender;
    div.appendChild(senderP);
 
    const messageP = document.createElement('p');
-   messageP.classList.add(`message`);
+   messageP.classList.add(`message-text`);
    messageP.innerHTML = message;
    div.appendChild(messageP);
    document.getElementById("message-box").appendChild(div);

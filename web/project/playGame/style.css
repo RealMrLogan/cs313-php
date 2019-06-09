@@ -41,6 +41,12 @@
    display: none;
 }
 
+/* The message box */
+section#message-box {
+   height: 50%;
+   overflow-y: scroll;
+}
+
 /* Character stats */
 .stats-section {
    display: flex;
