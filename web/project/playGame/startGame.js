@@ -126,8 +126,8 @@ function makeMove(actor, action, subject) {
                }
                subject.protectionid.durability -= damage;
 
-               if (actor.protectionid.durability <= 0) {
-                  addMesseage(sessionObj.turn, `${actor.displayname}'s protection ${actor.protectionid.displayname} broke`);
+               if (subject.protectionid.durability <= 0) {
+                  addMesseage(sessionObj.turn, `${subject.displayname}'s protection ${subject.protectionid.displayname} broke`);
                }
             }
          }
