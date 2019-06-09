@@ -291,10 +291,11 @@ function addMesseage(sender, message) {
    const div = document.createElement("div");
    div.classList.add(`${sender}-message`);
    div.classList.add(`message`);
-   const senderP = document.createElement('p');
-   senderP.classList.add("sender-name");
-   senderP.innerHTML = sender;
-   div.appendChild(senderP);
+
+   // const senderP = document.createElement('p');
+   // senderP.classList.add("sender-name");
+   // senderP.innerHTML = sender;
+   // div.appendChild(senderP);
 
    const messageP = document.createElement('p');
    messageP.classList.add(`message-text`);
