@@ -151,7 +151,7 @@ function makeMove(actor, action, subject) {
 
          subject.hitpoints -= damage;
          // display what happened
-         addMesseage(sessionObj.turn, `${actor.displayname} case ${actor.spellid.displayname} on ${subject.displayname} and caused ${damage} damage!`);
+         addMesseage(sessionObj.turn, `${actor.displayname} cast ${actor.spellid.displayname} on ${subject.displayname} and caused ${damage} damage!`);
          break;
       case "defend":
          actor.armor *= 1.5;
