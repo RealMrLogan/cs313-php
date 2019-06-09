@@ -148,10 +148,9 @@ function makeMove(actor, action, subject) {
          alert(`${actor.displayname} case ${actor.spellid.displayname} on ${subject.displayname} and caused ${damage} damage!`);
          break;
       case "defend":
-         const newArmor = actor.armor * 1.5;
-         actor.armor = newArmor;
+         actor.armor *= 1.5;
          // display what happened
-         alert(`${actor.displayname} defended itself and gained ${newArmor} armor!`);
+         alert(`${actor.displayname} defended itself and gained ${actor.armor / 3} armor!`);
          break;
    }
    // add more magic if they have a spell
@@ -178,6 +177,7 @@ function ShowCharacterStats() {
    showBaseStats();
    showWeaponStats();
    showProtectionStats();
+   showSpellStats();
 }
 
 function showBaseStats() {

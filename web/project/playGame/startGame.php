@@ -57,7 +57,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Base Defense: </h4><label class="stat-label" id="player-armor"></label>
          </div>
          <div>
-            <h4>Equipped Weapon: </h4><label class="stat-label" id="player-weapon"></label>
+            <h4>Weapon: </h4><label class="stat-label" id="player-weapon"></label>
          </div>
          <div>
             <h4 class="tab">Damage: </h4><label class="stat-label" id="player-weapon-damage"></label>
@@ -66,7 +66,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Durability: </h4><label class="stat-label" id="player-weapon-durability"></label>
          </div>
          <div>
-            <h4>Equipped Protection: </h4><label class="stat-label" id="player-protection"></label>
+            <h4>Protection: </h4><label class="stat-label" id="player-protection"></label>
          </div>
          <div>
             <h4 class="tab">Armor: </h4><label class="stat-label" id="player-protection-armor"></label>
@@ -75,7 +75,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Durability: </h4><label class="stat-label" id="player-protection-durability"></label>
          </div>
          <div>
-            <h4>Equipped Spell: </h4><label class="stat-label" id="player-spell"></label>
+            <h4>Spell: </h4><label class="stat-label" id="player-spell"></label>
          </div>
          <div>
             <h4 class="tab">Damage: </h4><label class="stat-label" id="player-spell-damage"></label>
@@ -102,7 +102,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Base Defense: </h4><label class="stat-label" id="opponent-armor"></label>
          </div>
          <div>
-            <h4>Equipped Weapon: </h4><label class="stat-label" id="opponent-weapon"></label>
+            <h4>Weapon: </h4><label class="stat-label" id="opponent-weapon"></label>
          </div>
          <div>
             <h4 class="tab">Damage: </h4><label class="stat-label" id="opponent-weapon-damage"></label>
@@ -111,7 +111,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Durability: </h4><label class="stat-label" id="opponent-weapon-durability"></label>
          </div>
          <div>
-            <h4>Equipped Protection: </h4><label class="stat-label" id="opponent-protection"></label>
+            <h4>Protection: </h4><label class="stat-label" id="opponent-protection"></label>
          </div>
          <div>
             <h4 class="tab">Armor: </h4><label class="stat-label" id="opponent-protection-armor"></label>
@@ -120,7 +120,7 @@ sendToJS($_SESSION);
             <h4 class="tab">Durability: </h4><label class="stat-label" id="opponent-protection-durability"></label>
          </div>
          <div>
-            <h4>Equipped Spell: </h4><label class="stat-label" id="opponent-spell"></label>
+            <h4>Spell: </h4><label class="stat-label" id="opponent-spell"></label>
          </div>
          <div>
             <h4 class="tab">Damage: </h4><label class="stat-label" id="opponent-spell-damage"></label>
