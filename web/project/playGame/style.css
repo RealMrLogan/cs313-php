@@ -53,7 +53,7 @@ section#message-box {
 .message {
    width: 40%;
    border-radius: 10px;
-   padding: 0 10px;
+   padding: 10px;
    margin: 5px 0;
    font-size: 1.25em;
 }
@@ -78,7 +78,7 @@ p {
 }
 
 .opponent-message {
-   background-color: red;
+   background-color: #ff9999;
    margin-right: auto;
 }
 
