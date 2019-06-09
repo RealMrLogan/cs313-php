@@ -288,5 +288,5 @@ function addMesseage(sender, message) {
    messageP.innerHTML = message;
    div.appendChild(messageP);
    document.getElementById("message-box").appendChild(div);
-   window.scrollTo(0, document.querySelector(".message-box").scrollHeight);
+   window.scrollTo(0, document.querySelector("#message-box").scrollHeight);
 }
