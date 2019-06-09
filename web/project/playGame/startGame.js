@@ -117,7 +117,6 @@ function makeMove(actor, action, subject) {
                   damage /= 2; // if the protection is stronger, cut the damage in half
                } else {
                   damage -= subject.protectionid.armor;
-                  subject.protectionid.durability -= damage / 2;
                }
                subject.protectionid.durability -= damage;
 
@@ -145,9 +144,14 @@ function makeMove(actor, action, subject) {
          }
 
          subject.hitpoints -= damage;
+         // display what happened
+         alert(`${actor.displayname} case ${actor.spellid.displayname} on ${subject.displayname} and caused ${damage} damage!`);
          break;
       case "defend":
-         actor.armor *= 1.5;
+         const newArmor = actor.armor * 1.5;
+         actor.armor = newArmor;
+         // display what happened
+         alert(`${actor.displayname} defended itself and gained ${newArmor} armor!`);
          break;
    }
    // add more magic if they have a spell

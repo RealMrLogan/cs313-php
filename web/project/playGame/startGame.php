@@ -36,6 +36,7 @@ sendToJS($_SESSION);
       </p>
       <section class="options" id="player-options">
          <button onclick="playerAttackWeapon()">Attack w/ Weapon</button>
+         <button onclick="playerAttackSpell()">Attack w/ Spell</button>
          <button onclick="playerDefend()">Defend</button>
       </section>
    </main>
