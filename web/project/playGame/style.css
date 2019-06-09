@@ -58,6 +58,10 @@ section#message-box {
    font-size: 1.25em;
 }
 
+p {
+   margin: 0;
+}
+
 .player-message {
    text-align: right;
    background-color: lightgreen;
