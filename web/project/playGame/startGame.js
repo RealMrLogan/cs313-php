@@ -76,17 +76,17 @@ function botOptions() {
       case 0: // attack
          setTimeout(() => {
             makeMove(sessionObj.opponent, "attack", sessionObj.player);
-         }, 250);
+         }, 1000);
          break;
       case 1: // defend
          setTimeout(() => {
             makeMove(sessionObj.opponent, "defend", sessionObj.player);
-         }, 250);
+         }, 1000);
          break;
       case 2: // spell attack
          setTimeout(() => {
             makeMove(sessionObj.opponent, "spellAttack", sessionObj.player);
-         }, 250);
+         }, 1000);
          break;
    }
 }
