@@ -93,10 +93,11 @@ function hidePlayeroptions() {
 }
 
 function makeMove(actor, action, subject) {
+   let damage = 0;
    switch (action) {
       case "attack":
          // add the base damage
-         let damage = actor.damage;
+         damage = actor.damage;
          // add the weapon damage
          if (actor.weaponid) { // a weapon is selected
             if (actor.weaponid.durability > 0) { // weapon isn't broken
