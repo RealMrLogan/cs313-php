@@ -39,6 +39,7 @@ sendToJS($_SESSION);
          <button onclick="playerAttackSpell()">Attack w/ Spell</button>
          <button onclick="playerDefend()">Defend</button>
       </section>
+      <section id="message-box"></section>
    </main>
 
    <section class="stats-section">

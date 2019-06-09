@@ -104,7 +104,7 @@ function makeMove(actor, action, subject) {
                damage += actor.weaponid.damage;
                actor.weaponid.durability -= actor.weaponid.damage;
                if (actor.weaponid.durability <= 0) {
-                  alert(`${actor.displayname}'s weapon ${actor.weaponid.displayname} broke`);
+                  addMesseage(sessionObj.turn, `${actor.displayname}'s weapon ${actor.weaponid.displayname} broke`);
                }
             }
          }
@@ -121,7 +121,7 @@ function makeMove(actor, action, subject) {
                subject.protectionid.durability -= damage;
 
                if (actor.protectionid.durability <= 0) {
-                  alert(`${actor.displayname}'s protection ${actor.protectionid.displayname} broke`);
+                  addMesseage(sessionObj.turn, `${actor.displayname}'s protection ${actor.protectionid.displayname} broke`);
                }
             }
          }
@@ -131,7 +131,7 @@ function makeMove(actor, action, subject) {
          }
          subject.hitpoints -= damage;
          // display what happened
-         alert(`${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
+         addMesseage(sessionObj.turn, `${actor.displayname} attacked ${subject.displayname} and caused ${damage} damage!`);
          break;
       case "spellAttack":
          damage = 0; // reset the variable
@@ -140,17 +140,17 @@ function makeMove(actor, action, subject) {
             actor.magic -= actor.spellid.cost;
             damage = actor.spellid.damage;
          } else {
-            alert(`${actor.displayname} does not have enough magic to cast that spell`);
+            addMesseage(sessionObj.turn, `${actor.displayname} does not have enough magic to cast that spell`);
          }
 
          subject.hitpoints -= damage;
          // display what happened
-         alert(`${actor.displayname} case ${actor.spellid.displayname} on ${subject.displayname} and caused ${damage} damage!`);
+         addMesseage(sessionObj.turn, `${actor.displayname} case ${actor.spellid.displayname} on ${subject.displayname} and caused ${damage} damage!`);
          break;
       case "defend":
          actor.armor *= 1.5;
          // display what happened
-         alert(`${actor.displayname} defended itself and gained ${actor.armor / 3} armor!`);
+         addMesseage(sessionObj.turn, `${actor.displayname} defended itself and gained ${actor.armor / 3} armor!`);
          break;
    }
    // add more magic if they have a spell
@@ -272,4 +272,18 @@ function showSpellStats() {
       document.getElementById("opponent-spell-cooldown").innerHTML = sessionObj.opponent.spellid.cooldown;
       document.getElementById("opponent-spell-cost").innerHTML = sessionObj.opponent.spellid.cost;
    }
+}
+
+function addMesseage(sender, message) {
+   const div = document.createElement("div");
+   const senderP = document.createElement('p');
+   senderP.classList.add(`${sender}-message`);
+   senderP.innerHTML = sender;
+   div.appendChild(senderP);
+
+   const messageP = document.createElement('p');
+   messageP.classList.add(`message`);
+   messageP.innerHTML = message;
+   div.appendChild(messageP);
+   document.getElementById("message-box").appendChild(div);
 }
