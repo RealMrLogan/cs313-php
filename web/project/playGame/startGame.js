@@ -115,7 +115,9 @@ function makeMove(actor, action, subject) {
             }
          }
          // subtract the base armor
-         damage -= subject.armor;
+         if (subject.armor < damage) {
+            damage -= subject.armor;
+         }
          // subtract the protection armor
          if (subject.protectionid) { // protection is on
             if (subject.protectionid.durability > 0) { // protection is not broken
