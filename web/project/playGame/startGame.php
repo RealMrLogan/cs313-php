@@ -51,10 +51,13 @@ sendToJS($_SESSION);
             <h4 class="tab">Hitpoints: </h4><label class="stat-label" id="player-hp"></label>
          </div>
          <div>
-            <h4 class="tab">Base Damage: </h4><label class="stat-label" id="player-damage"></label>
+            <h4 class="tab">Damage: </h4><label class="stat-label" id="player-damage"></label>
          </div>
          <div>
-            <h4 class="tab">Base Defense: </h4><label class="stat-label" id="player-armor"></label>
+            <h4 class="tab">Defense: </h4><label class="stat-label" id="player-armor"></label>
+         </div>
+         <div>
+            <h4 class="tab">Magic: </h4><label class="stat-label" id="player-magic"></label>
          </div>
          <div>
             <h4>Weapon: </h4><label class="stat-label" id="player-weapon"></label>
@@ -96,10 +99,13 @@ sendToJS($_SESSION);
             <h4 class="tab">Hitpoints: </h4><label class="stat-label" id="opponent-hp"></label>
          </div>
          <div>
-            <h4 class="tab">Base Damage: </h4><label class="stat-label" id="opponent-damage"></label>
+            <h4 class="tab">Damage: </h4><label class="stat-label" id="opponent-damage"></label>
          </div>
          <div>
-            <h4 class="tab">Base Defense: </h4><label class="stat-label" id="opponent-armor"></label>
+            <h4 class="tab">Defense: </h4><label class="stat-label" id="opponent-armor"></label>
+         </div>
+         <div>
+            <h4 class="tab">Magic: </h4><label class="stat-label" id="opponent-magic"></label>
          </div>
          <div>
             <h4>Weapon: </h4><label class="stat-label" id="opponent-weapon"></label>

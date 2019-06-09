@@ -190,6 +190,7 @@ function showBaseStats() {
    }
    document.getElementById("player-damage").innerHTML = sessionObj.player.damage;
    document.getElementById("player-armor").innerHTML = sessionObj.player.armor;
+   document.getElementById("player-magic").innerHTML = sessionObj.player.magic;
 
    //update the opponent stats
    document.getElementById("opponent-name").innerHTML = sessionObj.opponent.displayname;
@@ -200,6 +201,7 @@ function showBaseStats() {
    }
    document.getElementById("opponent-damage").innerHTML = sessionObj.opponent.damage;
    document.getElementById("opponent-armor").innerHTML = sessionObj.opponent.armor;
+   document.getElementById("opponent-magic").innerHTML = sessionObj.opponent.magic;
 }
 
 function showWeaponStats() {
