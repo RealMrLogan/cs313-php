@@ -1,17 +1,35 @@
 const http = require('http');
 const port = 8080;
 
-http.createServer((req, res) => {
-   res.write("Hello World");
-   res.end();
-}).listen(port, () => {
-   console.log("Now listening on port: ", port);
+http.createServer(onRequest).listen(port, () => {
+   console.log("Now listening on port:", port);
 });
 
-// var http = require('http');
-
-// //create a server object:
-// http.createServer(function (req, res) {
-//   res.write('Hello World!'); //write a response to the client
-//   res.end(); //end the response
-// }).listen(8080); //the server object listens on port 8080
+function onRequest(req, res) {
+   switch (req.url) {
+      case "/home":
+         const html = `<h1>Welcome to the Home Page</h1>`;
+         res.writeHead(200, {
+            "Content-type": "text/html"
+         });
+         res.end(html);
+         break;
+      case "/getData":
+         res.writeHead(200, {
+            "Content-type": "application/json"
+         });
+         const json = JSON.stringify({
+            name: "Logan Saunders",
+            class: "CS313"
+         });
+         res.end(json);
+         break;
+      default:
+         res.writeHead(404, {
+            "Content-type": "text/html"
+         });
+         res.write("Page Not Found");
+         res.end();
+         break;
+   }
+}
